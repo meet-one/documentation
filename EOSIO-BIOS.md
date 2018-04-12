@@ -19,3 +19,5 @@
 2. 候选节点开始连接EOS网络竞选出块节点。
 3. EOS持有者开始投票。
 4. 21个ABP将会被选举出来的21个出块节点替代。ABP跟启动节点一样，EOS主网正式出块10轮以后才允许竞选。
+
+参考资料: [https://medium.com/eosio/bios-boot-eosio-blockchain-2b58b8a978a1](https://medium.com/eosio/bios-boot-eosio-blockchain-2b58b8a978a1)
