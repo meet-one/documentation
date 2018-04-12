@@ -1,4 +1,4 @@
-# eos-documentation-translate
+# eos-documentation
 
 
 MEET.ONE翻译的EOSIO相关的文档
