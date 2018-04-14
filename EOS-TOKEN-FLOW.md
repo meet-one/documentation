@@ -1,1 +1,1 @@
-![logo](assets/images/eos-token-flow.jpeg)
+![image](assets/eos-token-flow.jpeg)
