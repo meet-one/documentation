@@ -1,5 +1,6 @@
 # eos-documentation
 
+EOSIO documentation translated to Chinese by MEET.ONE
 
 MEET.ONE翻译的EOSIO相关的文档
 
