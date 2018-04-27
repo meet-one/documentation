@@ -2,9 +2,9 @@
 
 EOSIO ICO智能合约
 
-buy 购买
+function buy() 购买
 
-function register(address user, string key) 映射
+function register(publicKey) 映射
 
 function today() 获取今天ICO天数
 
