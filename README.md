@@ -6,6 +6,8 @@
 
 [EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
 
+[EOSIO RPC Interface](https://eosio.github.io/eos/group__eosiorpc.html#details)
+
 [Standby BP Cost Model](https://docs.google.com/spreadsheets/d/e/2PACX-1vSyG9_r6Lu5HFY1NeyDP3EYaox0rh5QcLPkZiXaLnLHZkLnFcg6IxGB6MZw9nZy7YByl2lbhbRAh77S/pubhtml#)
 
 [BIOS Booting an EOSIO blockchain](https://forums.eosgo.io/discussion/361/once-upon-a-time-bios-booting-an-eosio-blockchain#latest)
