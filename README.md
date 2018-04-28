@@ -1,5 +1,11 @@
 # eos-documentation
 
+EOSIO documentation 
+
+[Draft EOS.IO Constitution](https://forums.eosgo.io/profile/reactions/thomasbcox?reaction=up)
+
+
+
 EOSIO documentation translated by MEET.ONE
 
 MEET.ONE翻译的EOSIO相关的文档
