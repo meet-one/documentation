@@ -1,3 +1,8 @@
+## MEET.ONE Products
+
+[EOS KIT](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
+
+
 ## EOSIO documentation 
 
 [Draft EOS.IO Constitution](https://forums.eosgo.io/profile/reactions/thomasbcox?reaction=up)
