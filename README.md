@@ -5,11 +5,11 @@
 
 ## EOSIO documentation 
 
+[EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
+
 [Draft EOS.IO Constitution](https://forums.eosgo.io/profile/reactions/thomasbcox?reaction=up)
 
 [EOSIO wiki](https://github.com/EOSIO/eos/wiki)
-
-[EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
 
 [EOSIO RPC Interface](https://eosio.github.io/eos/group__eosiorpc.html#details)
 
