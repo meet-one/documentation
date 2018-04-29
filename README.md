@@ -14,6 +14,8 @@
 
 [EOS Canada - BP Illustrative Revenue Analysis](https://docs.google.com/spreadsheets/d/1SW6vkQeFRoKfZWOUnz1yxjTrdBEQy_x3n8h_VsPj0LU/edit#gid=1259689806)
 
+[Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
+
 
 ## EOSIO documentation translated by MEET.ONE / MEET.ONE翻译的EOSIO相关的文档
 
