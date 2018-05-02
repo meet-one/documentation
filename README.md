@@ -21,6 +21,8 @@
 
 [Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
 
+[Using SSL with EOS.IO nodes](https://steemit.com/eos/@eosrio/using-ssl-with-eos-io-nodes)
+
 
 ## EOSIO documentation translated by MEET.ONE / MEET.ONE翻译的EOSIO相关的文档
 
