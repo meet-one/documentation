@@ -1,6 +1,6 @@
 ## MEET.ONE Products
 
-[EOS KIT](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
+[EOS KIT - A Chrome extension for EOSIO users.](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
 
 
 ## EOSIO documentation 
