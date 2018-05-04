@@ -25,6 +25,8 @@
 
 [Addressing DDOS Risks at EOS Launch](https://steemit.com/cryptocurrency/@eostribe/addressing-ddos-risks-at-eos-launch)
 
+[How to setup a secure VPN based EOS.IO network](https://steemit.com/eos/@eosrio/how-to-setup-a-secure-vpn-based-eos-io-network)
+
 ## EOSIO documentation translated by MEET.ONE / MEET.ONE翻译的EOSIO相关的文档
 
 
