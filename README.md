@@ -27,6 +27,7 @@
 
 [How to setup a secure VPN based EOS.IO network](https://steemit.com/eos/@eosrio/how-to-setup-a-secure-vpn-based-eos-io-network)
 
+[Setup an EOS Test Node (Block Producer) with SSL + Testnet](https://steemit.com/eos/@blockmatrix/setup-an-eos-test-node-block-producer-with-ssl-testnet)
 ## EOSIO documentation translated by MEET.ONE / MEET.ONE翻译的EOSIO相关的文档
 
 
