@@ -23,6 +23,7 @@
 
 [Using SSL with EOS.IO nodes](https://steemit.com/eos/@eosrio/using-ssl-with-eos-io-nodes)
 
+[Addressing DDOS Risks at EOS Launch](https://steemit.com/cryptocurrency/@eostribe/addressing-ddos-risks-at-eos-launch)
 
 ## EOSIO documentation translated by MEET.ONE / MEET.ONE翻译的EOSIO相关的文档
 
