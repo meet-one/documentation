@@ -40,5 +40,5 @@
 
 [EOS ICO 智能合约解读 原创)](EOSCrowdsale.md)
 
-[EOSJS钱包相关说明 (原创)][EOSJS.md]
+[EOSJS钱包相关说明 (原创)](EOSJS.md)
 
