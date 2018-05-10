@@ -17,8 +17,6 @@
 
 [BIOS Booting an EOSIO blockchain](https://forums.eosgo.io/discussion/361/once-upon-a-time-bios-booting-an-eosio-blockchain#latest)
 
-[EOS Canada - BP Illustrative Revenue Analysis]
-
 [EOS Canada - Block Producer Architecture](https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/DQmWCPW452y5Zf8BeCM2ABU251f4T41aESgHSoT6YuC5Rkn_1680x8400)
 
 [Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
