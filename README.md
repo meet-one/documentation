@@ -19,6 +19,8 @@
 
 [EOS Canada - BP Illustrative Revenue Analysis](https://docs.google.com/spreadsheets/d/1SW6vkQeFRoKfZWOUnz1yxjTrdBEQy_x3n8h_VsPj0LU/edit#gid=1259689806)
 
+[EOS Canada - Block Producer Architecture](https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/DQmWCPW452y5Zf8BeCM2ABU251f4T41aESgHSoT6YuC5Rkn_1680x8400)
+
 [Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
 
 [Using SSL with EOS.IO nodes](https://steemit.com/eos/@eosrio/using-ssl-with-eos-io-nodes)
