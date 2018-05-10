@@ -17,7 +17,7 @@
 
 [BIOS Booting an EOSIO blockchain](https://forums.eosgo.io/discussion/361/once-upon-a-time-bios-booting-an-eosio-blockchain#latest)
 
-[EOS Canada - BP Illustrative Revenue Analysis](https://docs.google.com/spreadsheets/d/1SW6vkQeFRoKfZWOUnz1yxjTrdBEQy_x3n8h_VsPj0LU/edit#gid=1259689806)
+[EOS Canada - BP Illustrative Revenue Analysis]
 
 [EOS Canada - Block Producer Architecture](https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/DQmWCPW452y5Zf8BeCM2ABU251f4T41aESgHSoT6YuC5Rkn_1680x8400)
 
