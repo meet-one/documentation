@@ -3,7 +3,7 @@
 [EOS KIT - A Google Chrome extension for EOSIO users](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
 
 
-## EOSIO BP materials 
+## EOSIO block producer materials 
 
 [EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
 
@@ -38,7 +38,6 @@
 
 
 ## EOSIO documentation translated by MEET.ONE / MEET.ONE翻译的EOSIO相关的文档
-
 
 
 [EOSIO技术白皮书 (第二版)](EOSIO-whitepaper-2.0-Chinese.md)
