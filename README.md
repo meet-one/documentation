@@ -5,6 +5,7 @@
 
 ## EOSIO documentation 
 
+[EOS Acknowledgments](https://docs.google.com/spreadsheets/d/1Hccr8k7aN_u6TOlGHy-hqvvEijnMbpJ_l5479-46o3Y/edit#gid=0)
 [EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
 
 [Draft EOS.IO Constitution](https://forums.eosgo.io/profile/reactions/thomasbcox?reaction=up)
