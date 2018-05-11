@@ -3,7 +3,7 @@
 [EOS KIT - A Google Chrome extension for EOSIO users](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
 
 
-## EOSIO block producer materials 
+## EOSIO Block Producer 
 
 [EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
 
@@ -24,7 +24,7 @@
 [BP VPN Nodes](https://docs.google.com/spreadsheets/d/1qGu4nQOKmBw44KQhNF-mgpeBvxIWoRjuHP9NLi1P0hs/edit#gid=0)
 
 
-## EOSIO community materials 
+## EOSIO Community 
 
 [EOS Acknowledgments](https://docs.google.com/spreadsheets/d/1Hccr8k7aN_u6TOlGHy-hqvvEijnMbpJ_l5479-46o3Y/edit#gid=0)
 
@@ -37,7 +37,7 @@
 [Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
 
 
-## EOSIO documentation translated by MEET.ONE / MEET.ONE翻译的EOSIO相关的文档
+## Translated/Created by MEET.ONE
 
 
 [EOSIO技术白皮书 (第二版)](EOSIO-whitepaper-2.0-Chinese.md)
@@ -47,6 +47,4 @@
 [一张图看懂EOS/ETH发行代币的区别 (原创)](EOS-TOKEN-FLOW.md)
 
 [EOS ICO 智能合约解读 原创)](EOSCrowdsale.md)
-
-[EOSJS钱包相关说明 (原创)](EOSJS.md)
 
