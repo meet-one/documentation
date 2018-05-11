@@ -21,6 +21,8 @@
 
 [Setup an EOS Test Node (Block Producer) with SSL + Testnet](https://steemit.com/eos/@blockmatrix/setup-an-eos-test-node-block-producer-with-ssl-testnet)
 
+[BP VPN Nodes](https://docs.google.com/spreadsheets/d/1qGu4nQOKmBw44KQhNF-mgpeBvxIWoRjuHP9NLi1P0hs/edit#gid=0)
+
 
 ## EOSIO community materials 
 
