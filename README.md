@@ -3,6 +3,20 @@
 [EOS KIT - A Google Chrome extension for EOSIO users](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
 
 
+## EOSIO Community 
+
+[EOS Acknowledgments](https://docs.google.com/spreadsheets/d/1Hccr8k7aN_u6TOlGHy-hqvvEijnMbpJ_l5479-46o3Y/edit#gid=0)
+
+[Draft EOS.IO Constitution](https://forums.eosgo.io/profile/reactions/thomasbcox?reaction=up)
+
+[EOSIO wiki](https://github.com/EOSIO/eos/wiki)
+
+[EOSIO RPC Interface](https://eosio.github.io/eos/group__eosiorpc.html#details)
+
+[Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
+
+
+
 ## EOSIO Block Producer 
 
 [EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
@@ -23,18 +37,6 @@
 
 [BP VPN Nodes](https://docs.google.com/spreadsheets/d/1qGu4nQOKmBw44KQhNF-mgpeBvxIWoRjuHP9NLi1P0hs/edit#gid=0)
 
-
-## EOSIO Community 
-
-[EOS Acknowledgments](https://docs.google.com/spreadsheets/d/1Hccr8k7aN_u6TOlGHy-hqvvEijnMbpJ_l5479-46o3Y/edit#gid=0)
-
-[Draft EOS.IO Constitution](https://forums.eosgo.io/profile/reactions/thomasbcox?reaction=up)
-
-[EOSIO wiki](https://github.com/EOSIO/eos/wiki)
-
-[EOSIO RPC Interface](https://eosio.github.io/eos/group__eosiorpc.html#details)
-
-[Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
 
 
 ## Translated/Created by MEET.ONE
