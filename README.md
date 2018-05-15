@@ -13,6 +13,8 @@
 
 [Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
 
+[EOSIO 1.0 Release Update](https://block.one/eosio-1-0-release-update/)
+
 [EOSIO Dawn 4.0 Release](https://medium.com/eosio/eosio-dawn-4-0-release-b25661a49ac2)
 
 [EOSIO Dawn 3.0 Release](https://medium.com/eosio/eosio-dawn-3-0-now-available-49a3b99242d7)
