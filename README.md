@@ -1,7 +1,7 @@
 
 ## EOSIO Community 
 
-[Video list from Thomax Cox](https://www.youtube.com/channel/UC1YXNL469qIagGyTzZM-uRw)
+[Video list of Thomax Cox](https://www.youtube.com/channel/UC1YXNL469qIagGyTzZM-uRw)
 
 [EOS Acknowledgments](https://docs.google.com/spreadsheets/d/1Hccr8k7aN_u6TOlGHy-hqvvEijnMbpJ_l5479-46o3Y/edit#gid=0)
 
