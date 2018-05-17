@@ -63,5 +63,5 @@
 
 [EOS KIT - A Google Chrome extension for EOSIO users](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
 
-
+[MEET.ONE APP for Mobile Device](https://meet.one/download)
 
