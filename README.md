@@ -7,8 +7,6 @@
 
 [Draft EOS.IO Constitution](https://forums.eosgo.io/profile/reactions/thomasbcox?reaction=up)
 
-[EOSIO wiki](https://github.com/EOSIO/eos/wiki)
-
 [EOSIO RPC Interface](https://eosio.github.io/eos/group__eosiorpc.html#details)
 
 [Introduction to Blockchain: Daniel Larimer at Virginia Tech](https://www.youtube.com/watch?v=sYAktmG1NuA)
@@ -26,6 +24,8 @@
 [EOSIO Dawn 1.0 Release](https://steemit.com/eos/@eosio/dawn-1-0-released)
 
 ## EOSIO Block Producer 
+
+[EOSIO wiki](https://github.com/EOSIO/eos/wiki)
 
 [EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
 
