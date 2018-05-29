@@ -25,6 +25,8 @@
 
 ## EOSIO Block Producer 
 
+[EOS BP Security Statement](https://steemit.com/eos/@eostribe/eos-bp-security-statement)
+
 [EOSIO wiki](https://github.com/EOSIO/eos/wiki)
 
 [EOSIO Scholar Testnet](https://github.com/ScholarTestnet)
