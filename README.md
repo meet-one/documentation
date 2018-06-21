@@ -1,6 +1,11 @@
 
 ## EOSIO Community 
 
+[Decentralized Blockchain Governance](https://medium.com/@bytemaster/decentralized-blockchain-governance-743f0273bf5a?from=groupmessage&isappinstalled=0)
+
+[EOS 911](https://recovery.eos911.io/)
+[ECAF - The EOSIO Core Arbitration Forum](https://eoscorearbitration.io/)
+
 [Video list of Thomax Cox](https://www.youtube.com/channel/UC1YXNL469qIagGyTzZM-uRw)
 
 [EOS Acknowledgments](https://docs.google.com/spreadsheets/d/1Hccr8k7aN_u6TOlGHy-hqvvEijnMbpJ_l5479-46o3Y/edit#gid=0)
