@@ -37,6 +37,8 @@
 
 ## EOSIO Block Producer 
 
+[Bancor protocol whiterpaper](https://storage.googleapis.com/website-bancor/2018/04/01ba8253-bancor_protocol_whitepaper_en.pdf)
+
 [EOS BP Security Statement](https://steemit.com/eos/@eostribe/eos-bp-security-statement)
 
 [EOSIO wiki](https://github.com/EOSIO/eos/wiki)
