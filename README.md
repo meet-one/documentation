@@ -1,6 +1,8 @@
 
 ## EOSIO Community 
 
+[Bancor protocol whitepaper](https://storage.googleapis.com/website-bancor/2018/04/01ba8253-bancor_protocol_whitepaper_en.pdf)
+
 [EOS Resource Allocation - Daniel Larimer](https://www.youtube.com/watch?v=N6CTRdx6NVE)
 
 [Decentralized Blockchain Governance](https://medium.com/@bytemaster/decentralized-blockchain-governance-743f0273bf5a?from=groupmessage&isappinstalled=0)
@@ -36,8 +38,6 @@
 [EOSIO Dawn 1.0 Release](https://steemit.com/eos/@eosio/dawn-1-0-released)
 
 ## EOSIO Block Producer 
-
-[Bancor protocol whiterpaper](https://storage.googleapis.com/website-bancor/2018/04/01ba8253-bancor_protocol_whitepaper_en.pdf)
 
 [EOS BP Security Statement](https://steemit.com/eos/@eostribe/eos-bp-security-statement)
 
