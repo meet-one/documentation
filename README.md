@@ -1,6 +1,8 @@
 
 ## EOSIO Community 
 
+[EOS Resource Allocation - Daniel Larimer](https://www.youtube.com/watch?v=N6CTRdx6NVE)
+
 [Decentralized Blockchain Governance](https://medium.com/@bytemaster/decentralized-blockchain-governance-743f0273bf5a?from=groupmessage&isappinstalled=0)
 
 [EOS 911](https://recovery.eos911.io/)
