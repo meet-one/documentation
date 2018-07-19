@@ -1,6 +1,8 @@
 
 ## EOSIO Community 
 
+[CryptoKylin-Testnet](https://github.com/cryptokylin/CryptoKylin-Testnet)
+
 [Inter-blockchain Communication via Merkle Proofs with EOS.IO](https://steemit.com/eos/@dan/inter-blockchain-communication-via-merkle-proofs-with-eos-io)
 
 [Bancor protocol whitepaper](https://storage.googleapis.com/website-bancor/2018/04/01ba8253-bancor_protocol_whitepaper_en.pdf)
