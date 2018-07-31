@@ -1,6 +1,8 @@
 
 ## EOSIO Community 
 
+[Introducing Demux — Deterministic Databases Off-Chain Verified by the EOSIO Blockchain](https://medium.com/eosio/introducing-demux-deterministic-databases-off-chain-verified-by-the-eosio-blockchain-bd860c49b017)
+
 [CryptoKylin-Testnet](https://github.com/cryptokylin/CryptoKylin-Testnet)
 
 [Inter-blockchain Communication via Merkle Proofs with EOS.IO](https://steemit.com/eos/@dan/inter-blockchain-communication-via-merkle-proofs-with-eos-io)
