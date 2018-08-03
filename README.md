@@ -1,6 +1,8 @@
 
 ## EOSIO Community 
 
+[Proposal for EOS Resource Renting & Rent Distribution](https://medium.com/@bytemaster/proposal-for-eos-resource-renting-rent-distribution-9afe8fb3883a)
+
 [Introducing Demux — Deterministic Databases Off-Chain Verified by the EOSIO Blockchain](https://medium.com/eosio/introducing-demux-deterministic-databases-off-chain-verified-by-the-eosio-blockchain-bd860c49b017)
 
 [CryptoKylin-Testnet](https://github.com/cryptokylin/CryptoKylin-Testnet)
