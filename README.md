@@ -47,6 +47,8 @@
 
 ## EOSIO Block Producer 
 
+[EOS Network Monitor](http://eosnetworkmonitor.io/)
+
 [EOS BP Security Statement](https://steemit.com/eos/@eostribe/eos-bp-security-statement)
 
 [EOSIO wiki](https://github.com/EOSIO/eos/wiki)
