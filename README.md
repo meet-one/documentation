@@ -91,3 +91,4 @@
 
 [MEET.ONE APP for Mobile Device](https://meet.one/download)
 
+[MORE.ONE APP for Mobile Device](http://more.one/)
