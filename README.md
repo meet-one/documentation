@@ -1,8 +1,11 @@
 ## Smart Contract
 
 [Eos ram price calculator](https://github.com/EOSIO/eos/issues/4958)
+
 [how much RAM I need to deploy a contract](https://github.com/EOSIO/eos/issues/4979)
+
 [How to get producer info](https://github.com/EOSIO/eos/issues/5128)
+
 [How to delete smart contract](https://github.com/EOSIO/eos/issues/5108)
 
 
