@@ -1,3 +1,7 @@
+## Smart Contract
+[How to delete smart contract](https://github.com/EOSIO/eos/issues/5108)
+
+
 ## EOSIO Telegram Channel
 
 [MEET.ONE(中文)](https://t.me/MeetOne)
