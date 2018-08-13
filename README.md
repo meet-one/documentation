@@ -1,4 +1,8 @@
 ## Smart Contract
+
+[Eos ram price calculator](https://github.com/EOSIO/eos/issues/4958)
+[how much RAM I need to deploy a contract](https://github.com/EOSIO/eos/issues/4979)
+[How to get producer info](https://github.com/EOSIO/eos/issues/5128)
 [How to delete smart contract](https://github.com/EOSIO/eos/issues/5108)
 
 
@@ -70,6 +74,8 @@
 [EOSIO Dawn 1.0 Release](https://steemit.com/eos/@eosio/dawn-1-0-released)
 
 ## EOSIO Block Producer 
+
+[EOS Seed List](https://eosnodes.privex.io/)
 
 [EOS Network Monitor](http://eosnetworkmonitor.io/)
 
