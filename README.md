@@ -78,6 +78,8 @@
 
 ## EOSIO Block Producer 
 
+[Greylisting on EOS](https://steemit.com/eos/@greymass/greylisting-on-eos)
+
 [EOS Seed List](https://eosnodes.privex.io/)
 
 [EOS Network Monitor](http://eosnetworkmonitor.io/)
