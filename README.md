@@ -32,6 +32,8 @@
 
 ## EOSIO Community 
 
+State of EOS - Sidechains with Thomas Cox, Worbli, Creatos, Telos & GenerEOS(https://www.youtube.com/watch?v=rAkOuokQJtA&feature=youtu.be)
+
 [EOS Worker Proposal System Announcement](https://docs.google.com/document/d/1lU5TfBOoIsWwidqM743kLqXJ3Aj47x7NQT-Xi-m-bbM/edit)
 
 [Proposal for EOS Resource Renting & Rent Distribution](https://medium.com/@bytemaster/proposal-for-eos-resource-renting-rent-distribution-9afe8fb3883a)
