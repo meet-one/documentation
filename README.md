@@ -1,3 +1,25 @@
+## MEET.ONE Products
+
+[EOS KIT - A Google Chrome extension for EOSIO users](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
+
+[MEET.ONE APP for Mobile Device](https://meet.one/download)
+
+[MORE.ONE APP for Mobile Device](http://more.one/)
+
+
+
+## Translated/Created by MEET.ONE
+
+[EOSIO技术白皮书 (第二版)](EOSIO-whitepaper-2.0-Chinese.md)
+
+[EOSIO主网启动流程 (原创)](EOSIO-BIOS.md)
+
+[一张图看懂EOS/ETH发行代币的区别 (原创)](EOS-TOKEN-FLOW.md)
+
+[EOS ICO 智能合约解读 原创)](EOSCrowdsale.md)
+
+
+
 ## Smart Contract
 
 [Eos ram price calculator](https://github.com/EOSIO/eos/issues/4958)
@@ -7,6 +29,7 @@
 [How to get producer info](https://github.com/EOSIO/eos/issues/5128)
 
 [How to delete smart contract](https://github.com/EOSIO/eos/issues/5108)
+
 
 
 ## EOSIO Telegram Channel
@@ -28,6 +51,7 @@
 [EOS 911](https://t.me/EOS911)
 
 [EOS BlockPros](https://t.me/EOSPros)
+
 
 
 ## EOSIO Community 
@@ -80,6 +104,8 @@
 
 [EOSIO Dawn 1.0 Release](https://steemit.com/eos/@eosio/dawn-1-0-released)
 
+
+
 ## EOSIO Block Producer 
 
 [Greylisting on EOS](https://steemit.com/eos/@greymass/greylisting-on-eos)
@@ -113,23 +139,3 @@
 [BP VPN Nodes](https://docs.google.com/spreadsheets/d/1qGu4nQOKmBw44KQhNF-mgpeBvxIWoRjuHP9NLi1P0hs/edit#gid=0)
 
 
-
-## Translated/Created by MEET.ONE
-
-[EOSIO技术白皮书 (第二版)](EOSIO-whitepaper-2.0-Chinese.md)
-
-[EOSIO主网启动流程 (原创)](EOSIO-BIOS.md)
-
-[一张图看懂EOS/ETH发行代币的区别 (原创)](EOS-TOKEN-FLOW.md)
-
-[EOS ICO 智能合约解读 原创)](EOSCrowdsale.md)
-
-
-
-## MEET.ONE Products
-
-[EOS KIT - A Google Chrome extension for EOSIO users](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
-
-[MEET.ONE APP for Mobile Device](https://meet.one/download)
-
-[MORE.ONE APP for Mobile Device](http://more.one/)
