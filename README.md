@@ -22,6 +22,8 @@
 
 ## Smart Contract
 
+[Proxy token to allow mitigating EOSIO Ram exploit](https://github.com/EOSEssentials/EOS-Proxy-Token)
+
 [Eos ram price calculator](https://github.com/EOSIO/eos/issues/4958)
 
 [how much RAM I need to deploy a contract](https://github.com/EOSIO/eos/issues/4979)
