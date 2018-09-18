@@ -58,6 +58,8 @@
 
 ## EOSIO Community 
 
+[Universal Resource Inheritance](https://medium.com/@bytemaster/universal-resource-inheritance-505e7ca4d048)
+
 [State of EOS - Sidechains with Thomas Cox, Worbli, Creatos, Telos & GenerEOS](https://www.youtube.com/watch?v=rAkOuokQJtA&feature=youtu.be)
 
 [EOS Worker Proposal System Announcement](https://docs.google.com/document/d/1lU5TfBOoIsWwidqM743kLqXJ3Aj47x7NQT-Xi-m-bbM/edit)
