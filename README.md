@@ -96,17 +96,7 @@
 
 [EOSIO 1.0](https://block.one/news/eosio-1-0-release/)
 
-[EOSIO Dawn 4.2 Release](https://github.com/EOSIO/eos/releases/tag/dawn-v4.2.0)
-
-[EOSIO Dawn 4.1 Release](https://github.com/EOSIO/eos/releases/tag/dawn-v4.1.0)
-
-[EOSIO Dawn 4.0 Release](https://medium.com/eosio/eosio-dawn-4-0-release-b25661a49ac2)
-
-[EOSIO Dawn 3.0 Release](https://medium.com/eosio/eosio-dawn-3-0-now-available-49a3b99242d7)
-
-[EOSIO Dawn 2.0 Release](https://medium.com/eosio/eos-io-dawn-2-0-released-development-update-c19348eac3c7)
-
-[EOSIO Dawn 1.0 Release](https://steemit.com/eos/@eosio/dawn-1-0-released)
+[EOSIO release notes](https://github.com/EOSIO/eos/releases/tag/v1.3.0)
 
 
 
