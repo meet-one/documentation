@@ -32,6 +32,10 @@
 
 [How to delete smart contract](https://github.com/EOSIO/eos/issues/5108)
 
+[How to clear smart contract(1.3.0+ Only)](https://github.com/EOSIO/eos/pull/5442)
+
+[iterate over scopes and tables for a given contract](https://github.com/EOSIO/eos/pull/5486)
+
 
 
 ## EOSIO Telegram Channel
@@ -96,7 +100,7 @@
 
 [EOSIO 1.0](https://block.one/news/eosio-1-0-release/)
 
-[EOSIO release notes](https://github.com/EOSIO/eos/releases/tag/v1.3.0)
+[EOSIO release notes](https://github.com/EOSIO/eos/releases)
 
 
 
