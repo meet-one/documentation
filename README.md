@@ -22,6 +22,8 @@
 
 ## Smart Contract
 
+[EOS Smart Contract Development Security Best Practices](https://github.com/slowmist/eos-smart-contract-security-best-practices/blob/master/README_EN.md)
+
 [Proxy token to allow mitigating EOSIO Ram exploit](https://github.com/EOSEssentials/EOS-Proxy-Token)
 
 [Eos ram price calculator](https://github.com/EOSIO/eos/issues/4958)
