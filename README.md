@@ -36,7 +36,7 @@
 
 [How to clear smart contract(1.3.0+ Only)](https://github.com/EOSIO/eos/pull/5442)
 
-[iterate over scopes and tables for a given contract](https://github.com/EOSIO/eos/pull/5486)
+[iterate over scopes and tables for a given contract(1.3.0+ Only)](https://github.com/EOSIO/eos/pull/5486)
 
 
 
