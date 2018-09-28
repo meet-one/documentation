@@ -22,6 +22,8 @@
 
 ## Smart Contract
 
+[support secondary key in get table without the need of modifying abi file](https://github.com/EOSIO/eos/pull/4053)
+
 [EOS Smart Contract Development Security Best Practices](https://github.com/slowmist/eos-smart-contract-security-best-practices/blob/master/README_EN.md)
 
 [Proxy token to allow mitigating EOSIO Ram exploit](https://github.com/EOSEssentials/EOS-Proxy-Token)
