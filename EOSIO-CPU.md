@@ -1,12 +1,12 @@
-### EOSIO CPU 资源分配原理分析
+# EOSIO CPU 资源分配原理分析
 
-众所周知，EOS 账户可以使用的 CPU 运算资源与账户抵押的 CPU 有关，抵押的越多，可以使用的资源就越多。每个 EOS 对应的 CPU 资源计算公式为: 
+众所周知，EOS 账户可以使用的 CPU 运算资源与账户抵押的 CPU 有关，抵押的越多，可以使用的资源就越多。质押的 EOS 对应的 CPU 资源计算公式为: 
 
-> 可用 CPU 微秒数 = account_cpu_usage_average_window_ms * max_block_cpu_usage / block_interval_ms * your_staked_cpu_count / total_cpu_count
+> 可用 CPU 微秒数 = max_block_cpu_usage * (account_cpu_usage_average_window_ms / block_interval_ms) * your_staked_cpu_count / total_cpu_count
 
-> 当前主网配置 max_block_cpu_usage = 200000
+> 其中 max_block_cpu_usage 是可配置的，当前主网配置为默认值 default_max_block_cpu_usage = 200'000
 
-> (account_cpu_usage_average_window_ms * max_block_cpu_usage / block_interval_ms = 34560000000)
+> 所以 max_block_cpu_usage * (account_cpu_usage_average_window_ms / block_interval_ms) = 34560000000
 
 以主网 2018-10-19 为例，当前 CPU 总质押量为 280053493.80756617 EOS，那么可以算出每个 EOS 可以使用 123.40 us，也就是说质押 1000 个 EOS，才可以使用 123.40 ms的计算资源。
 
@@ -25,24 +25,20 @@
 > 以上描述摘自 https://www.jianshu.com/p/f914fefa512f
 
 
-因此 EOS 设计了两种 CPU 模式，拥堵模式以及空闲模式。
+因此 EOS 设计了两种 CPU 模式：拥堵模式、空闲模式。
 
-空闲模式下每个 EOS 可用的 CPU 资源乘以实际的1千倍，那么上面的公式应该再乘以1千，实际 1 EOS = 123.40 us * 1000。
-拥堵模式下每个 EOS 可用的 CPU 为实际抵押数值，1 EOS = 123.40 us。
+空闲模式下，可用 CPU 资源会放大 1000 倍。按前面的公式计算，再乘以 1000，实际 1 EOS = 123.40 ms。了解过金融的同学，可以把这个 1000 理解为市盈率。
+拥堵模式下，可用 CPU 为实际数值，1 EOS = 123.40 us。
 
 之前有个账户叫 blocktwitter 不知道大家有没有印象，为什么可以一直往主网发送垃圾消息，就是因为空闲模式下，他可以使用自己质押量 1000 倍的 CPU 资源。当这个账户被 BP 加入灰名单以后，相当于进入了拥堵模式，只能使用实际抵押的资源。
 
-主网账户拥堵模式的触发条件是什么呢?有以下两种。 
+主网账户拥堵模式的触发条件有以下两种： 
 
-> 1. EOS 账户被节点加入灰名单。
-> 2. 过去 60 秒平均每个块的 CPU 使用量达到 max_block_cpu_usage * target_block_cpu_usage_pct，之前这个值是 20ms，昨天调整以后达到 40ms。
+1. 个别账户拥堵模式：个别 EOS 账户被节点加入灰名单。可用资源的变化立刻生效。
+2. 全网拥堵模式：过去 60 秒平均每个块的 CPU 使用量达到 max_block_cpu_usage * target_block_cpu_usage_pct，之前这个值是 200'000us * 10% = 20ms，昨天调整以后为 40ms。全网拥堵时，可用资源的变化缓慢生效，具体是：每分钟乘以 0.99，如果 CPU 使用量一直没有降下来，直到触底需要大约 687 分钟 (log(0.0001) / log(0.99))，每个质押的 EOS 实际可使用量回到实际质押的值。
+条件 1 是
 
-条件1是个别账户进入拥堵模式，对灰名单外的账户没有影响。
-
-条件2是全网开始进入拥堵模式，每一分钟每个质押的 EOS 对应的 CPU 资源越来越少，经过687分钟 (log(0.0001) / log(0.99)) 的持续下降以后，每个质押的 EOS 实际使用量回到实际质押的值。
-
-当然这个下降过程也会出现上升的情况。比如下降到一定程度以后，过去60秒每个块的平均 CPU 使用量没有达到40ms阈值了，又会开始上升。
-
+当然这个下降过程也会出现上升的情况。比如下降到一定程度以后，过去 60 秒每个块的平均 CPU 使用量没有达到 40ms 阈值了，又会开始上升。
 
 下图是过去一周，主网每个 EOS 对应的 CPU 使用量变化图，每一分钟都在变化。
 
