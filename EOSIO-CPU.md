@@ -4,7 +4,7 @@
 
 > 可用 CPU 毫秒数 = account_cpu_usage_average_window_ms * max_block_cpu_usage / block_interval_ms * your_staked_cpu_count / total_cpu_count
 
-> 当前主网配置max_block_cpu_usage = 200000
+> 当前主网配置 max_block_cpu_usage = 200000
 
 > (account_cpu_usage_average_window_ms * max_block_cpu_usage / block_interval_ms = 34560000000)
 
