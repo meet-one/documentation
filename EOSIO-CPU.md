@@ -2,7 +2,7 @@
 
 众所周知，EOS 账户可以使用的 CPU 运算资源与账户抵押的 CPU 有关，抵押的越多，可以使用的资源就越多。每个 EOS 对应的 CPU 资源计算公式为: 
 
-> 可用 CPU 毫秒数 = account_cpu_usage_average_window_ms * max_block_cpu_usage / block_interval_ms * your_staked_cpu_count / total_cpu_count
+> 可用 CPU 微秒数 = account_cpu_usage_average_window_ms * max_block_cpu_usage / block_interval_ms * your_staked_cpu_count / total_cpu_count
 
 > 当前主网配置 max_block_cpu_usage = 200000
 
