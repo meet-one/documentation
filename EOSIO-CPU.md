@@ -4,7 +4,7 @@
 
 > 可用 CPU 微秒数 = max_block_cpu_usage * (account_cpu_usage_average_window_ms / block_interval_ms) * your_staked_cpu_count / total_cpu_count
 
-> 其中 max_block_cpu_usage 是可配置的，当前主网配置为默认值 default_max_block_cpu_usage = 200'000
+> 其中 max_block_cpu_usage 是可配置的，当前主网配置为默认值 default_max_block_cpu_usage = 200000
 
 > 所以 max_block_cpu_usage * (account_cpu_usage_average_window_ms / block_interval_ms) = 34560000000
 
@@ -35,7 +35,7 @@
 主网账户拥堵模式的触发条件有以下两种： 
 
 1. 个别账户拥堵模式：个别 EOS 账户被节点加入灰名单。可用资源的变化立刻生效。
-2. 全网拥堵模式：过去 60 秒平均每个块的 CPU 使用量达到 max_block_cpu_usage * target_block_cpu_usage_pct，之前这个值是 200'000us * 10% = 20ms，昨天调整以后为 40ms。全网拥堵时，可用资源的变化缓慢生效，具体是：每分钟乘以 0.99，如果 CPU 使用量一直没有降下来，直到触底需要大约 687 分钟 (log(0.0001) / log(0.99))，每个质押的 EOS 实际可使用量回到实际质押的值。
+2. 全网拥堵模式：过去 60 秒平均每个块的 CPU 使用量达到 max_block_cpu_usage * target_block_cpu_usage_pct，之前这个值是 200000us * 10% = 20ms，昨天调整以后为 200000us * 20% = 40ms。全网拥堵时，可用资源的变化缓慢生效，具体是：每分钟乘以 0.99，如果 CPU 使用量一直没有降下来，直到触底需要大约 687 分钟 (log(0.0001) / log(0.99))，每个质押的 EOS 实际可使用量回到实际质押的值。
 
 当然这个变化过程是可能随便改变方向的，类似多头和空头拉锯。比如下降到一定程度以后，过去 60 秒每个块的平均 CPU 使用量没有达到 40ms 阈值了，又会开始上升。
 
