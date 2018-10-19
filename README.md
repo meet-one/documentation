@@ -16,7 +16,7 @@
 
 [一张图看懂EOS/ETH发行代币的区别 (原创)](EOS-TOKEN-FLOW.md)
 
-[EOS ICO 智能合约解读 原创)](EOSCrowdsale.md)
+[EOS ICO 智能合约解读 (原创)](EOSCrowdsale.md)
 
 
 
