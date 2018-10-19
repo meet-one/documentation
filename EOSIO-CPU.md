@@ -1,37 +1,35 @@
-EOS中CPU资源分配原理分析
+EOSIO CPU资源分配原理分析
 
 众所周知，EOS账户可以使用的CPU运算资源与账户抵押的CPU有关，抵押的越多，可以使用的资源就越多。每个EOS对应的CPU资源计算公式为: 
-```
-可用 CPU 毫秒数 = account_cpu_usage_average_window_ms * default_max_block_cpu_usage / block_interval_ms * your_staked_cpu_count / total_cpu_count / 1000
 
-(account_cpu_usage_average_window_ms * default_max_block_cpu_usage / block_interval_ms = 34560000000)
-```
+> 可用 CPU 毫秒数 = account_cpu_usage_average_window_ms * default_max_block_cpu_usage / block_interval_ms * your_staked_cpu_count / total_cpu_count / 1000
+
+> (account_cpu_usage_average_window_ms * default_max_block_cpu_usage / block_interval_ms = 34560000000)
 
 以主网2018-10-19为例,当前CPU总质押量为280053493.80756617 EOS,那么可以算出每个EOS可以使用0.12340毫秒,也就是说质押1千个EOS,才可以使用123毫秒的计算资源。
 
 这样会带来一个问题就是质押量少的账户无法发起任何操作,不能转账,不能质押等等。
 
-```
-如同现实生活中的水、电和流量，忙时和闲时是分开定价的，使用价格手段鼓励用户错峰用电。EOS也允许用户在系统闲时使用更多的资源，在系统忙时保证能使用对应权重的资源，解决了以太坊拥堵时低gas交易无法打包的问题。
 
-同样的钱，在闲时可以买到很多的水电，同理，抵押同样的代币，在系统闲时可使用更多的资源。
-这里就引出EOS使用资源的基本原则：使用一分，记录一分。
+> 如同现实生活中的水、电和流量，忙时和闲时是分开定价的，使用价格手段鼓励用户错峰用电。EOS也允许用户在系统闲时使用更多的资源，在系统忙时保证能使用对应权重的资源，解决了以太坊拥堵时低gas交易无法打包的问题。
 
-为了实现动态调节的机理，EOS引入了虚拟资源这一概念，最大可使用的虚拟资源为实际可使用的资源的1000倍，也就是说，用户在系统闲时可用的最大资源为实际可用的1000倍。
+> 同样的钱，在闲时可以买到很多的水电，同理，抵押同样的代币，在系统闲时可使用更多的资源。
+> 这里就引出EOS使用资源的基本原则：使用一分，记录一分。
 
-现实生活中的水、电的忙闲是通过时段区分的，比如白天是忙时，半夜是闲时。EOS则需要通过监测60s内的区块资源的使用情况来区分，现阶段是60s内的区块资源使用低于最大可用的10%，就（小比例）增加系统可用的虚拟资源，否则就（小比例）减少。
+> 为了实现动态调节的机理，EOS引入了虚拟资源这一概念，最大可使用的虚拟资源为实际可使用的资源的1000倍，也就是说，用户在系统闲时可用的最大资源为实际可用的1000倍。
 
-以上描述摘自 https://www.jianshu.com/p/f914fefa512f
-```
+> 现实生活中的水、电的忙闲是通过时段区分的，比如白天是忙时，半夜是闲时。EOS则需要通过监测60s内的区块资源的使用情况来区分，现阶段是60s内的区块资源使用低于最大可用的10%，就（小比例）增加系统可用的虚拟资源，否则就（小比例）减少。
+
+> 以上描述摘自 https://www.jianshu.com/p/f914fefa512f
+
 
 因此EOS设计了两种CPU模式,拥堵模式以及空闲模式。空闲模式下每个EOS可用的CPU资源乘以实际的1千倍,拥堵模式下每个EOS可用的CPU为实际抵押数值。
 之前有个账户叫blocktwitter不知道大家有没有印象,为什么可以一直往主网发送垃圾消息,就是因为空闲模式下,他可以使用自己质押量1千倍的CPU资源。当这个账户被BP加入灰名单以后,相当于进入了拥堵模式,只能使用实际抵押的资源。
 
 主网账户拥堵模式的触发条件是什么呢?有以下两种。 
-```
-1. EOS账户被节点加入灰名单。
-2. 过去60秒平均每个块的CPU使用量达到 max_block_cpu_usage * target_block_cpu_usage_pct,之前这个值是20ms,昨天调整以后达到40ms。
-```
+
+> 1. EOS账户被节点加入灰名单。
+> 2. 过去60秒平均每个块的CPU使用量达到 max_block_cpu_usage * target_block_cpu_usage_pct,之前这个值是20ms,昨天调整以后达到40ms。
 
 条件1是个别账户进入拥堵模式,对灰名单外的账户没有影响。
 
@@ -42,4 +40,4 @@ EOS中CPU资源分配原理分析
 
 下图是过去一周,主网每个EOS对应的CPU使用量变化图。
 
-![image](assets/CPU-Resource-Costs.png.jpeg)
+![image](assets/CPU-Resource-Costs.png)

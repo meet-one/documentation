@@ -10,7 +10,7 @@
 
 ## Translated/Created by MEET.ONE
 
-[EOS中CPU资源分配原理分析 (原创)](EOSIO-CPU.md)
+[EOSIO CPU资源分配原理分析 (原创)](EOSIO-CPU.md)
 
 [EOSIO技术白皮书 (第二版)](EOSIO-whitepaper-2.0-Chinese.md)
 
