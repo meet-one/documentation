@@ -52,7 +52,7 @@
 
 [MEET.ONE(English)](https://t.me/MeetOneEnglish)
 
-[Cryptokylin-Testnet](https://t.me/cryptokylin)
+[Cryptokylin-Testnet](https://github.com/cryptokylin/CryptoKylin-Testnet)
 
 [EOS](https://t.me/EOSproject)
 
