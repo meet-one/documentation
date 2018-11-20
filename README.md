@@ -20,7 +20,7 @@
 
 [EOS ICO 智能合约解读 (原创)](EOSCrowdsale.md)
 
-[DAPP 指南(原创)](dapp-tutorial.md)
+[DAPP Tutorial/指南(原创)](dapp-tutorial.md)
 
 
 
