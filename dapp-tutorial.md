@@ -18,6 +18,8 @@
 
 [EOS Browser eosflare](https://eosflare.io)
 
+[EOS Smart Contract Development Security Best Practices](https://github.com/slowmist/eos-smart-contract-security-best-practices/blob/master/README_EN.md)
+
 [Smart Contracts](https://github.com/meet-one/documentation/blob/master/README.md#smart-contract)
 
 [EOSIO CPU资源分配原理分析 (原创)](EOSIO-CPU.md)
