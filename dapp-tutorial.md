@@ -16,7 +16,7 @@
 
 [EOS Seed List](https://eosnodes.privex.io/)
 
-[EOS Browser eosflare]https://eosflare.io
+[EOS Browser eosflare](https://eosflare.io)
 
 [Smart Contracts](https://github.com/meet-one/documentation/blob/master/README.md#smart-contract)
 
