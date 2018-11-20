@@ -4,7 +4,7 @@
 
 [Hello World](https://developers.eos.io/eosio-home/docs/your-first-contract)
 
-[EOS javascript API](https://github.com/EOSIO/eosjs/tree/v16.0.9)
+[EOS Javascript API](https://github.com/EOSIO/eosjs/tree/v16.0.9)
 
 [Scatter JS SDK](https://get-scatter.com/docs/dev/setting-up-for-web-apps)
 
