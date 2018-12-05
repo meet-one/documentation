@@ -43,10 +43,23 @@ sdi      8:128  0    1T  0 disk
 setenforce Permissive
 ```
 
-### 2. 关闭 TP
+### 2. 关闭 TPH
+以下命令不是持久化改变，但比较容易说明改了啥，仅供参考：
 ```
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
 echo never > /sys/kernel/mm/transparent_hugepage/defrag
+```
+参考[Disable Transparent Huge Pages (THP)](https://docs.mongodb.com/manual/tutorial/transparent-huge-pages/index.html#red-hat-centos-7)，真正使用的是：
+```
+mkdir -p /etc/tuned/no-thp
+
+echo '[main]
+include=virtual-guest
+
+[vm]
+transparent_hugepages=never' > /etc/tuned/no-thp/tuned.conf
+
+tuned-adm profile no-thp
 ```
 
 ### 3. TCP 优化
