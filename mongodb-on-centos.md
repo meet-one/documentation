@@ -6,7 +6,7 @@
 
 **系统：CentOS7。** 正像大部分国人喜欢用免费的 Windows 旗舰版，采用 RedHat 社区版，既有“企业级待遇”，又免费。实在是解决选择恐惧症必备良药……
 
-**MongoDB：4.0.4。** 4.0 之前的版本不支持一些类型转换的函数，后期使用起来很麻烦。举个例子：
+**MongoDB：4.0.4。** 4.0 之前的版本不支持一些类型转换的函数，后期使用起来很麻烦。举个例子：
 
 > [$toDate](https://docs.mongodb.com/manual/reference/operator/aggregation/toDate/#exp._S_toDate)
 >
