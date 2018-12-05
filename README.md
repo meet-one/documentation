@@ -44,6 +44,8 @@
 
 [iterate over scopes and tables for a given contract(1.3.0+ Only)](https://github.com/EOSIO/eos/pull/5486)
 
+[support reverse iteration & show RAM payer in get table(1.5.0+ Only)](https://github.com/EOSIO/eos/pull/6264)
+
 
 
 ## EOSIO Telegram Channel
