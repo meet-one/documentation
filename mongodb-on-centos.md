@@ -34,7 +34,7 @@ sdg      8:96   0    1T  0 disk
 sdh      8:112  0    1T  0 disk 
 sdi      8:128  0    1T  0 disk 
 ```
-## 系统环境
+## 环境配置
 
 ### 1. 设置 SE Linux
 
@@ -91,7 +91,9 @@ egrep "net.ipv4.$KEY" $FILE && sed -i -c "s/net\.ipv4\.$KEY.*/net\.ipv4\.$KEY = 
 sysctl -p 2>/tmp/sysctl.tmp
 ```
 
-### 4. 全局设置
+## 安装步骤
+
+### 1. 全局设置
 ```bash
 PASSWORD=MEETONE_FAKE_PASSWORD
 
@@ -103,12 +105,12 @@ S_PORT=17087
 NUM_SHARD=7
 ```
 
-### 5. 防火墙例外
+### 2. 防火墙例外
 ```bash
 semanage port -a -t mongod_port_t -p tcp 17087-17095
 ```
 
-### 6. 分区
+### 3. 分区
 ```bash
 yum install -y xfsprogs
 
@@ -132,7 +134,7 @@ function InitDisk {
 InitDisk
 ```
 
-### 7. 安装 MongoDB Community Edition
+### 4. 安装 MongoDB Community Edition
 参考官网的安装文档：[Install MongoDB Community Edition on Red Hat Enterprise or CentOS Linux](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/)
 ```bash
 echo '[mongodb-org-4.0]
@@ -147,7 +149,7 @@ yum install -y mongodb-org
 echo 'exclude=mongodb-org,mongodb-org-server,mongodb-org-shell,mongodb-org-mongos,mongodb-org-tools' >> /etc/yum.conf
 ```
 
-### 8. 初始化数据库目录
+### 5. 初始化数据库目录
 ```bash
 function InitDir {
   rm -rf ${PREFIX}0/mongod_conf_data ${PREFIX}0/mongo_log
@@ -168,7 +170,7 @@ function InitDir {
 InitDir
 ```
 
-### 9. 配置 MongoD 分片服务器
+### 6. 配置 MongoD 分片服务器
 ```bash
 function CreateShardConfig {
   for ((i = 1; i <= $NUM_SHARD; ++i)); do
@@ -266,7 +268,7 @@ InitShard
 CreateShardUser
 ```
 
-### 10. 配置 MongDB Config Server
+### 7. 配置 MongDB Config Server
 ```bash
 function CreateConfigServerConfig {
   FILE=/etc/mongod.conf
@@ -338,7 +340,7 @@ echo "use admin;
 db.createUser({ \"user\": \"MongoAdmin\", \"pwd\": \"${PASSWORD}\", \"roles\": [\"root\"]});" | mongo --port $CS_PORT
 ```
 
-### 11. 配置 MongS
+### 8. 配置 MongS
 ```bash
 function CreateMongoSConfig {
   FILE=/etc/mongos.conf
@@ -419,7 +421,7 @@ systemctl restart mongos.service
 AddShards
 ```
 
-### 12. 【可选】配置 keyfile
+### 9. 【可选】配置 keyfile
 ```bash
 function ConfigKeyfile {
   FILE=/etc/mongodb-keyfile
@@ -427,9 +429,9 @@ function ConfigKeyfile {
   chown mongod. $FILE
   chmod 600 $FILE
 
-  grep -P ^#keyFile /etc/mongod*.conf  &&  sed -i 's/#keyFile/keyFile/g' /etc/mongod*.conf
+  grep -P '^#keyFile' /etc/mongod*.conf  &&  sed -i 's/#keyFile/keyFile/g' /etc/mongod*.conf
 
-  grep -P ^#keyFile /etc/mongos.conf  &&  sed -i 's/#keyFile/keyFile/g' /etc/mongos.conf
+  grep -P '^#keyFile' /etc/mongos.conf  &&  sed -i 's/#keyFile/keyFile/g' /etc/mongos.conf
 }
 
 function RestartMongo {
