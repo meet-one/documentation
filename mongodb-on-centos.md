@@ -38,7 +38,7 @@ sdi      8:128  0    1T  0 disk
 
 ### 1. 设置 SE Linux
 
-每次 reboot 系统之后都要做一次：
+安装过程中，若您需要 reboot 系统，则每次 reboot 之后都要做一次：
 ```bash
 setenforce Permissive
 ```
