@@ -20,7 +20,7 @@ WiredTiger Storage Engine](https://docs.mongodb.com/manual/core/wiredtiger/#stor
 **副本数：1。** 数据可以很容易重新获取，丢失的代价不高，所以副本不是很重要（有钱请搞三副本）。另外，目前 nodeos 较常把数据弄脏，在它本身没高可用时，不宜对数据库投入太多成本。
 
 **机器配置：某云服务器一台。** 16 Cores，256G RAM，启动盘 10G，额外八个 1T Disk。
-```
+```bash
 # lsblk
 NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda      8:0    0   10G  0 disk 
@@ -39,18 +39,18 @@ sdi      8:128  0    1T  0 disk
 ### 1. 设置 SE Linux
 
 每次 reboot 系统之后都要做一次：
-```
+```bash
 setenforce Permissive
 ```
 
 ### 2. 关闭 TPH
 以下命令不是持久化改变，但比较容易说明改了啥，仅供参考：
-```
+```bash
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
 echo never > /sys/kernel/mm/transparent_hugepage/defrag
 ```
-参考[Disable Transparent Huge Pages (THP)](https://docs.mongodb.com/manual/tutorial/transparent-huge-pages/index.html#red-hat-centos-7)，真正使用的是：
-```
+根据 [Disable Transparent Huge Pages (THP)](https://docs.mongodb.com/manual/tutorial/transparent-huge-pages/index.html#red-hat-centos-7)，真正使用的是：
+```bash
 mkdir -p /etc/tuned/no-thp
 
 echo '[main]
@@ -64,13 +64,13 @@ tuned-adm profile no-thp
 
 ### 3. TCP 优化
 以下命令不是持久化改变，但比较容易说明优化了啥，仅供参考：
-```
+```bash
 echo 120 > /proc/sys/net/ipv4/tcp_keepalive_time
 echo 3 > /proc/sys/net/ipv4/tcp_fin_timeout
 echo 3 > /proc/sys/net/ipv4/tcp_orphan_retries
 ```
 真正使用的是：
-```
+```bash
 FILE=/etc/sysctl.conf
 cp $FILE ${FILE}_`date +%Y%m%d%H%M`
 
@@ -92,7 +92,7 @@ sysctl -p 2>/tmp/sysctl.tmp
 ```
 
 ### 4. 全局设置
-```
+```bash
 PASSWORD=MEETONE_FAKE_PASSWORD
 
 PREFIX=/disk
@@ -104,12 +104,12 @@ NUM_SHARD=7
 ```
 
 ### 5. 防火墙例外
-```
+```bash
 semanage port -a -t mongod_port_t -p tcp 17087-17095
 ```
 
 ### 6. 分区
-```
+```bash
 yum install -y xfsprogs
 
 function InitDisk {
@@ -134,7 +134,7 @@ InitDisk
 
 ### 7. 安装 MongoDB Community Edition
 参考官网的安装文档：[Install MongoDB Community Edition on Red Hat Enterprise or CentOS Linux](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-red-hat/)
-```
+```bash
 echo '[mongodb-org-4.0]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.0/x86_64/
@@ -148,7 +148,7 @@ echo 'exclude=mongodb-org,mongodb-org-server,mongodb-org-shell,mongodb-org-mongo
 ```
 
 ### 8. 初始化数据库目录
-```
+```bash
 function InitDir {
   rm -rf ${PREFIX}0/mongod_conf_data ${PREFIX}0/mongo_log
   for ((i = 1; i <= $NUM_SHARD; ++i)); do
@@ -169,7 +169,7 @@ InitDir
 ```
 
 ### 9. 配置 MongoD 分片服务器
-```
+```bash
 function CreateShardConfig {
   for ((i = 1; i <= $NUM_SHARD; ++i)); do
     echo "shardsvr=true
@@ -267,7 +267,7 @@ CreateShardUser
 ```
 
 ### 10. 配置 MongDB Config Server
-```
+```bash
 function CreateConfigServerConfig {
   FILE=/etc/mongod.conf
 
@@ -339,7 +339,7 @@ db.createUser({ \"user\": \"MongoAdmin\", \"pwd\": \"${PASSWORD}\", \"roles\": [
 ```
 
 ### 11. 配置 MongS
-```
+```bash
 function CreateMongoSConfig {
   FILE=/etc/mongos.conf
 
@@ -420,7 +420,7 @@ AddShards
 ```
 
 ### 12. 【可选】配置 keyfile
-```
+```bash
 function ConfigKeyfile {
   FILE=/etc/mongodb-keyfile
   openssl rand -base64 745 > $FILE
