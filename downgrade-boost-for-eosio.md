@@ -10,9 +10,9 @@
 
 ## 解决方案
 
-不必删除 1.68 版本，当之前安装过 1.67，再安装 1.68 时，其实两者是同时存在的，只是系统目录下的链接是指向最新版本而已。只要把链接改回 1.67 即可。
+不必删除 1.68 版本，当之前安装过 1.67，再安装 1.68 时，其实两者是同时存在的，只是系统目录下的链接是指向最新版本而已。只要把链接改回 1.67 即可。
 
-```bash
+``` bash
 ln -s /usr/local/include/boost /usr/local/Cellar/boost/1.67.0_1/include/boost 
 
 ln -f /usr/local/Cellar/boost/1.67.0_1/lib/libboost_atomic-mt.a /usr/local/lib/libboost_atomic-mt.a
