@@ -436,10 +436,10 @@ function ConfigKeyfile {
 }
 
 function RestartMongo {
+  systemctl restart mongod.service
   for ((i = 1; i <= $NUM_SHARD; ++i)); do
     systemctl restart mongod_shard$i.service;
   done
-  systemctl restart mongod.service
   systemctl restart mongos.service
 }
 
