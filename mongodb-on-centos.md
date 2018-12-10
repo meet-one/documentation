@@ -335,6 +335,7 @@ CreateConfigServerService
 
 systemctl restart mongod.service
 
+sleep 3
 echo "rs.initiate({_id: 'csReplSet', members:[{_id: 0, host: '$BIND_IP:$CS_PORT'}]})" | mongo --port $CS_PORT
 echo "use admin;
 db.createUser({ \"user\": \"MongoAdmin\", \"pwd\": \"${PASSWORD}\", \"roles\": [\"root\"]});" | mongo --port $CS_PORT
