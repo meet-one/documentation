@@ -446,3 +446,27 @@ function RestartMongo {
 ConfigKeyfile
 RestartMongo
 ```
+
+### 10. 【可选】配置集合和创建索引
+```mongo
+use EOS
+db.action_traces.createIndex({"act.account": 1, "_id":1},{background: true, sparse: true})
+db.action_traces.createIndex({"act.name": 1, "_id":1},{background: true, sparse: true})
+db.action_traces.createIndex({"act.data.receiver": 1, "_id":1},{background: true, sparse: true})
+db.action_traces.createIndex({"act.data.from": 1, "_id":1},{background: true, sparse: true})
+db.action_traces.createIndex({"act.data.to": 1, "_id":1},{background: true, sparse: true})
+db.action_traces.createIndex({"act.data.name": 1, "_id":1},{background: true, sparse: true})
+db.action_traces.createIndex({"act.data.voter": 1, "_id":1},{background: true, sparse: true})
+db.action_traces.createIndex({"act.authorization.actor": 1, "_id":1},{background: true, sparse: true})
+db.action_traces.createIndex({"act.account": 1, "block_time": 1, "_id":1},{"background": true, "sparse" : true})
+
+sh.enableSharding("EOS")
+sh.shardCollection("EOS.action_traces", {"_id" : 1},  true)
+sh.shardCollection("EOS.transaction_traces", {"id" : "hashed"})
+```
+
+### 11. 【可选】安装 EOSIO 1.5
+```bash
+wget https://github.com/eosio/eos/releases/download/v1.5.0/eosio-1.5.0-1.el7.x86_64.rpm
+rpm -ivh ./eosio-1.5.0-1.el7.x86_64.rpm --nodeps
+```
