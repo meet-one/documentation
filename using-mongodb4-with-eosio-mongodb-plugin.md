@@ -14,7 +14,7 @@
 
 ## 改进方案
 
-修改 eos/scripts/eosio_build_{SYS_NAME}.sh，其中 SYS_NAME 是系统名字，以 macOS 为例，应该改的是 eos/scripts/eosio_build_darwin.sh。
+修改 eos/scripts/eosio_build_${SYS_NAME}.sh，其中 SYS_NAME 是系统名字，以 macOS 为例，应该改的是 eos/scripts/eosio_build_darwin.sh。
 
 - 把 mongo-c-driver 版本改到足够高，比如 1.13.0，即把脚本里的下载链接 `https://github.com/mongodb/mongo-c-driver/releases/download/1.10.2/mongo-c-driver-1.10.2.tar.gz ` 改为 `https://github.com/mongodb/mongo-c-driver/releases/download/1.13.0/mongo-c-driver-1.13.0.tar.gz`
 
@@ -26,14 +26,14 @@ git clone https://github.com/mongodb/mongo-cxx-driver.git --branch releases/stab
 sed -i 's/releases\/v3.3/releases\/stable/;s/1\.10\.2/1\.13\.0/g' scripts/eosio_build_ubuntu.sh
 
 # 编译前
-grep "Version:" /usr/local/lib/pkgconfig/libmongocxx-static.pc 
+grep "Version:" /usr/local/lib/pkgconfig/libmongocxx-static.pc
 Version: 3.3.2-pre
 
 # 编译
 ./osio_build.sh
 
 # 编译后
-grep "Version:" /usr/local/lib/pkgconfig/libmongocxx-static.pc 
+grep "Version:" /usr/local/lib/pkgconfig/libmongocxx-static.pc
 Version: 3.4.0
 ```
 
