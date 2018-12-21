@@ -20,21 +20,15 @@ const double   continuous_rate       = 0.04879;          // 5% annual rate
 
 ## 求解
 
-### 高中版
-
-以下做个简单的推理：
-
-- `continuous_rate` 在 `claimrewards` 函数中被使用，而此函数被调用的频率是每天。
-
-- 所以，0.04879 可能是个“每日结算的”年化率，即：
+- 假设通胀率是“每日结算”的，记为 daily_rate，则：
 
 ```
-(1 + 0.04879 / 365) ^ 365 = 1.05
+(1 + daily_rate / 365) ^ 365 = 1 + annual_rate
 
 注：这里的 ^ 表示幂，不是 XOR 运算。
 ```
 
-数值对上了，所以我们的推理正确！那么我们计算 `continuous_rate` 的公式就是：
+那么计算 daily_rate 的公式为：
 
 ```
 [365TH_ROOT(1 + annual_rate) - 1] * 365
@@ -42,31 +36,25 @@ const double   continuous_rate       = 0.04879;          // 5% annual rate
 注：365TH_ROOT 是开 365 次方
 ```
 
-把 5% 带入，计算结果是：`0.048793425246406`。其中运用的数学知识只到高中水平，并没有什么微积分的知识。
+把 5% 带入，计算结果是：`0.048793425246406`，这个数值已经和 0.04879 基本一样了。
 
-只有实时增发（次数是无限多次），才需要用到微积分，但 EOS 并没必要这么干。
+- 但是“每日结算”并不够，接下来推到时时刻刻都在结算的情况。
 
-### 大学版
+问题本质：已知 annual_rate、`(1 + continuous_rate / N) ^ N = 1 + annual_rate`，求 continuous_rate 在 N 为无穷大时的解。
 
-基于专研精神，我们也来微积分一下：
-
-问题本质：已知 annuyl_rate、`(1 + continuous_rate / N) ^ N = 1 + annuyl_rate`，求 continuous_rate 在 N 为无穷大时的解。
-
-上面我们已经把 N = 365 的解求出来了，但现在是 ∞，高中数学是不够用了。复习一下大学数学，马上就会发现 `lim N->∞ (1 + x / N) ^ N` 就是 `e ^ x` 的定义，所以：
+复习一下大学数学，马上就会发现 `lim N->∞ (1 + x / N) ^ N` 就是 `e ^ x` 的定义，所以：
 
 ```
-continuous_rate = ln(1 + annuyl_rate)
+continuous_rate = ln(1 + annual_rate)
 ```
 
-把 5% 代入 annuyl_rate，`continuous_rate = 0.048790164169432`
+把 5% 代入 annual_rate，`continuous_rate = 0.048790164169432`
 
 ## 相关信息
 
 MEET.ONE 的侧链会将年度通胀更合理地定义为 1%，所以按照我们上面的算法，`continuous_rate` 将为：
 
 ```
-[365TH_ROOT(1 + 0.01) - 1] * 365 = 0.009950466483283
-
 ln(1 + 0.01) = 0.009950330853168
 ```
 
