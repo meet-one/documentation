@@ -24,7 +24,7 @@ error: cannot use 'try' with exceptions disabled
         ^
 ```
 
-智能合约的编译目标是 WASM 文件，最终要在 WASM 的 VM 里运行，比如 [wabt][wabt]，这个常规情况下使用 C++ 开发可执行程序、静态库、动态库等，有很大不同。
+智能合约的编译目标是 WASM 文件，最终要在 WASM 的 VM 里运行，比如 [wabt][wabt]，这和常规情况下使用原生 C++ 开发可执行程序、静态库、动态库等，有很大不同。
 
 受限部分包括：
 
