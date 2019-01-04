@@ -46,7 +46,7 @@ error: cannot use 'try' with exceptions disabled
 
 ### 多语言支持
 
-如果您学过 Golang、Rust 可能会注意到，它们可以编译成 WASM 文件。比如 Golang 的编译命令为：
+如果您学过 Golang、Rust 可能会注意到，它们可以编译成 WASM 文件。比如 Golang 的编译命令为：
 
 ```bash
 GOOS=js GOARCH=wasm go build -o hello.wasm
@@ -54,7 +54,7 @@ GOOS=js GOARCH=wasm go build -o hello.wasm
 
 但是找个 Hello world 编译一下，您可能会哭，产生的 WASM 文件有 2.3MB，就获得一个打印信息……（EOS 基本概念：RAM 挺贵的。）
 
-虽然现状是 C++ 一枝独秀，但未来可能会有人开发专门的编译器，来支持 Golang、Rust 等语言开发 EOS 智能合约。
+虽然现状是 C++ 一枝独秀，但未来可能会有人开发专门的编译器支持 Golang、Rust 等语言开发 EOS 智能合约。
 
 ### WASM 逆向
 
@@ -74,7 +74,7 @@ eosio::print(p);
 
 以上代码，打印出 `read`。如果把 `8192` 改为 `8197`，则打印 `get`；改为 `8201`，打印 `malloc_from_freed was designed to only be called after _heap was completely allocated`。
 
-这个例子可能吓倒大家，特别交代下，一般开发中，较难遇到逆向……只是想说明 WASM 的内存管理和常规 C++ 开发的可执行程序是不同的，后者把指针指向 8192，是 Process Working Set 的地址，通常来说去读这么低的地址，后果极可能是读异常，挂掉。
+这个例子可能吓倒大家，特别交代下，一般开发中，较难遇到逆向……只是想说明 WASM 的内存管理和常规 C++ 开发的可执行程序是不同的，后者把指针指向 8192，是 Process Working Set 的地址，通常来说去读这么低的地址，后果极可能是读异常，挂掉。
 
 **划重点**：虽然你用 C++ 写代码，但编译后是 WASM 二进制编码，运行时使用 VM，受控性很强，降低了开发难度，也杜绝很多安全问题。
 
@@ -100,11 +100,11 @@ print(numpy.sqrt(2.0))
 
 Python 的 sqrt 函数，其实都是用 C 语言实现的，最终都是调用解释器里的本地代码，速度很快。
 
-常规 C++ 写的本地程序，几乎肯定是比 Python 快的，但我们前面说过：智能合约的 C++ 不是常规的 C++，当它被编译成 WASM 后，我们去看 WAST 代码，会发现 sqrt 的实现整个被塞进 WASM 里，它最终要用 VM 来执行，当然没有 Python 解释器快了！
+原生 C++ 写的本地程序，几乎肯定是比 Python 快的，但我们前面说过：智能合约的 C++ 不是常规的 C++，当它被编译成 WASM 后，我们去看 WAST 代码，会发现 sqrt 的实现整个被塞进 WASM 里，它最终要用 VM 来执行，当然没有 Python 解释器快了！
 
 ### 设计原则
 
-打开任意 WASM 文件，可以看到里面很多 `(import` 开头的行，这些都是原生 C++ 实现的 API，它们的执行速度就是本地代码的速度，对应[官网 API 文档](https://eosio.github.io/eosio.cdt/modules.html)里的 API。
+打开任意 WASM 文件，可以看到里面很多 `(import` 开头的行，这些都是原生 C++ 实现的 API，它们的执行速度就是本地代码的速度，对应[官网 API 文档](https://eosio.github.io/eosio.cdt/modules.html)里的 API。
 
 有前面的性能问题，我们不禁要问 EOS 为什么不多做点 API 来提高性能？这是因为维护少量 API 代价比较可控，数量一多就有版本问题，各节点可能因为版本不同步而无法达成共识。
 
