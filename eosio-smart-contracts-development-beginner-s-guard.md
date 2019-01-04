@@ -1,4 +1,4 @@
-# 程序员鼓励师系列：EOSIO 智能合约开发入门指南
+# 程序员鼓励师系列：EOSIO 智能合约开发从入门到入定
 
 > 作者: UMU @ MEET.ONE 实验室
 
@@ -24,7 +24,7 @@ error: cannot use 'try' with exceptions disabled
         ^
 ```
 
-智能合约的编译目标是 WASM 文件，最终要在 WASM 的 VM 里运行，比如 [wabt](https://github.com/WebAssembly/wabti)，这个常规情况下使用 C++ 开发可执行程序、静态库、动态库等，有很大不同。
+智能合约的编译目标是 WASM 文件，最终要在 WASM 的 VM 里运行，比如 [wabt][wabt]，这个常规情况下使用 C++ 开发可执行程序、静态库、动态库等，有很大不同。
 
 受限部分包括：
 
@@ -54,11 +54,11 @@ GOOS=js GOARCH=wasm go build -o hello.wasm
 
 但是找个 Hello world 编译一下，您可能会哭，产生的 WASM 文件有 2.3MB，就获得一个打印信息……（EOS 基本概念：RAM 挺贵的。）
 
-虽然现状是 C++ 一枝独秀，但未来可能会有人开发专门的编译器支持 Golang、Rust 等语言开发 EOS 智能合约。
+虽然现状是 C++ 一枝独秀，但未来可能会有人开发专门的编译器支持 Golang、Rust 等语言开发 EOS 智能合约。
 
 ### WASM 逆向
 
-VSCode 安装插件后可以直接打开 WASM 文件，显示 WAST 代码，比如我们随便打开一个 hello.wasm，滚动到末尾，可能会看到以下两行：
+[VSCode](https://code.visualstudio.com/) 安装插件后可以直接打开 WASM 文件，显示 WAST 代码，比如我们随便打开一个 hello.wasm，滚动到末尾，可能会看到以下两行：
 
 ```WebAssembly
   (data (i32.const 8192) "read\00")
@@ -108,6 +108,8 @@ Python 的 sqrt 函数，其实都是用 C 语言实现的，最终都是调用�
 
 有前面的性能问题，我们不禁要问 EOS 为什么不多做点 API 来提高性能？这是因为维护少量 API 代价比较可控，数量一多就有版本问题，各节点可能因为版本不同步而无法达成共识。
 
-另外，目前的 wabt 功能强大，性能也过得去，对于 sqrt 此类可能并不常用的数学函数，即使用原生 C++ 实现了，性能提升带来的好处，也无法平衡多版本可能带来的风险。
+另外，目前的 [wabt][wabt] 功能强大，性能也过得去，对于 sqrt 此类可能并不常用的数学函数，即使用原生 C++ 实现了，性能提升带来的好处，也无法平衡多版本可能带来的风险。
 
 原则上，BP 之间快速达成共识，提升 TPS 才是更值得做的。
+
+[wabt]:https://github.com/WebAssembly/wabt
