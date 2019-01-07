@@ -6,8 +6,6 @@
 
 [MORE.ONE APP for Mobile Device](http://more.one/)
 
-
-
 ## Translated/Created by MEET.ONE
 
 [EOSIO CPU资源分配原理分析 (原创)](EOSIO-CPU.md)
@@ -22,7 +20,7 @@
 
 [DAPP Tutorial/指南(原创)](dapp-tutorial.md)
 
-
+## [MEET.ONE 实验室专栏](meetone-lab.md)
 
 ## Smart Contract
 
