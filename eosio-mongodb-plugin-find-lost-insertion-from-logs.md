@@ -30,5 +30,5 @@ echo 'print("----");' >> lost.js
 ### 3. 导入 MongoDB
 
 ```bash
-nohup mongo mongodb://$user:$password@127.0.0.1:$port/admin lost.js > lost.log
+nohup mongo mongodb://$user:$password@127.0.0.1:$port/admin lost.js > lost.log &
 ```
