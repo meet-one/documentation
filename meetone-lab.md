@@ -21,3 +21,5 @@
 2019-01-03 [EOSIO MongoDB 插件系列：管理技巧](eosio-mongodb-plugin-management-skills.md)
 
 2019-01-04 [程序员鼓励师系列：EOSIO 智能合约开发从入门到入定](eosio-smart-contracts-development-beginners-guide.md)
+
+2019-01-08 [eosio.token 合约分析](eosio-smart-contract-eosio.token.md)
