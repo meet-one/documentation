@@ -49,13 +49,3 @@ continuous_rate = ln(1 + annual_rate)
 ```
 
 把 5% 代入 annual_rate，`continuous_rate = 0.048790164169432`
-
-## 相关信息
-
-MEET.ONE 的侧链会将年度通胀更合理地定义为 1%，所以按照我们上面的算法，`continuous_rate` 将为：
-
-```
-ln(1 + 0.01) = 0.009950330853168
-```
-
-即 0.995%。
