@@ -1,65 +1,9 @@
 # 如何使用capi_checksum256作为table的key
 
-## capi_checksum256作为table的primary_key
-
-智能合约规定`primary_key`的类型必须是`uint64_t`, 这时候就需要将capi_checksum256转为`primary_key`可接受的类型：
-
-**table的定义:**
-
-```c++
-struct [[eosio::table("byhash"), eosio::contract("testcontract")]] byhash{
-  //transaction_id 为capi_checksum256类型数据
-  capi_checksum256 transaction_id;
-
-  //*(uint64_t*)&transaction_id 转primary_key 可接受类型
-  uint64_t primary_key() const { return *(uint64_t*)&transaction_id; }
-      
-  //参数序列化，可有可无，加入的话可以提升编译速度
-  EOSLIB_SERIALIZE(byhash, (transaction_id))
-};
-//实例化,表名为hash
-typedef eosio::multi_index<"hash"_n, byhash> hash_table;
-```
-
-**合约中cap_checksum256数据的生成:**
-
-```c++
-cap_checksum256 testcontract::get_hash(){
-  capi_checksum256 transaction_id;
-  auto size = transaction_size();
-  char* buf = new char[size];
-  uint32_t read = read_transaction(buf, size);
-  sha256(buf, read, &transaction_id);
-  delete[] buf;
-  sha256(buff, read, &transaction_id);
-  return transaction_id;
-}
-```
-cap_checksum256是交易id的类型，通过上面`get_hash()`函数可以获得当前交易区块的transaction id
-
-**合约中数据的添加:**
-
-```c++
-//获取transaction id
-cap_checksum256 transaction_id = get_hash();
-hash_table hashs(get_self(), get_self().value);
-//表中添加数据
-hashs.emplace(get_self(), [&](auto& h) { h.transaction_id = transaction_id; });
-```
-
-**查找:**
-
-通过transation id 查找`hash`表中对应数据
-```c++
-hash_table hashs(get_self(), get_self().value);
-auto it = hashs.require_find(*(uint64_t*)&transaction_id,"hash not exist!");
-```
-
-该方法有一个缺点：无法使用cleos get table命令行(-L和-U)来查询指定`transaction_id`的数据，只能显示整张`hash`表数据。
-
 ## capi_checksum256作为table的secondary_key
 
-相对primary_key的类型限制，secondary_key则可以使用多种类型包括(i64, i128, i256, float64, float128, ripemd160, sha256)。那么这里就可以使用sha256作为索引，不过capi_checksum256也需要先进行转换。
+由于primary_key类型规定是uint64_t，而sha256是256位，强制类型转换会导致信息丢失，严格意义上是不能作为primary_key。
+secondary_key则可以使用多种类型包括(i64, i128, i256, float64, float128, ripemd160, sha256)。那么这里就可以使用sha256作为索引，不过capi_checksum256也需要先进行转换。
 
 **checksum256 to sha256:**
 
