@@ -11,10 +11,10 @@
 * [合约中的权限](#合约中的权限)
 * [inline action](#inline-action)
 * [数据的存储](#数据的存储)
-  * [增(emplace)](#增（emplace）)
-  * [查(find)](#查（find))
-  * [删(erase)](#删（erase）)
-  * [改(modify)](#改（modify）)
+  * [增(emplace)](#增(emplace))
+  * [查(find)](#查(find))
+  * [删(erase)](#删(erase))
+  * [改(modify)](#改(modify))
   * [multi_index多索引](#multi_index多索引)
   * [迭代器](#迭代器)
 
@@ -243,7 +243,7 @@ typedef eosio::multi_index<"book"_n, book> book_table;
 ```
 上面是`multi_index`的实例化`book`表：`"book"_n`是我们存储数据的表名。通过命令行查表中数据时需要用到。
 
-### 增（emplace）
+### 增(emplace)
 
 ```c++
 const_iterator emplace(name payer, Lambda&& constructor)
@@ -302,7 +302,7 @@ cleos get table hello hello book
 
 ![image](smart-contract/eosio-smart-contract-empalce-table.png)
 
-### 查（find)
+### 查(find)
 
 **find:** 通过主键查找数据表中已有记录
 
@@ -339,7 +339,7 @@ const T& get(uint64_t primary,
 }
 ```
 
-### 删（erase）
+### 删(erase)
 
 **erase：** 根据主键删除主键对应对象
 ```c++
@@ -375,7 +375,7 @@ cleos push action hello deletedata '["2"]' -p hello
 
 ![image](smart-contract/eosio-smart-contract-erase.png)
 
-### 改（modify）
+### 改(modify)
 
 **modify：** 修改表中已存在的对象
 ```c++
