@@ -1,32 +1,32 @@
 # 智能合约开发入门教程
 
 ## 目录
-* [1 智能合约包含的文件](###1&#160;智能合约包含的文件)
-  * [1.1 hpp文件](####1.1&#160;hpp文件)
-  * [1.2 cpp文件](####1.2&#160;cpp文件)
-  * [1.3 wasm 和 abi文件](#####1.3&#160;wasm和abi文件)
-* [2 智能合约的部署](###2&#160;智能合约的部署)
-* [3 智能合约的使用](###3&#160;智能合约的使用)
-* [4 apply()函数](###4&#160;apply()函数)
-* [5 合约中的权限](###5&#160;合约中的权限)
-* [6 inline action](###6&#160;inline&#160;action)
-* [7 数据的存储](###7&#160;数据的存储)
-  * [7.1 增(emplace)](####7.1&#160;增（emplace）)
-  * [7.2 查(find)](####7.2&#160;查（find))
-  * [7.3 删(erase)](####7.3&#160;删（erase）)
-  * [7.4 改(modify)](####7.4&#160;改（modify）)
-  * [7.5 multi_index多索引](####7.5&#160;multi_index多索引)
-  * [7.6 迭代器](####7.6&#160;迭代器)
+* [智能合约包含的文件](###智能合约包含的文件)
+  * [hpp文件](####hpp文件)
+  * [cpp文件](####cpp文件)
+  * [wasm 和 abi文件](#####wasm和abi文件)
+* [智能合约的部署](###智能合约的部署)
+* [智能合约的使用](###智能合约的使用)
+* [apply()函数](###apply()函数)
+* [合约中的权限](###合约中的权限)
+* [inline action](###inline-action)
+* [数据的存储](###数据的存储)
+  * [增(emplace)](####增（emplace）)
+  * [查(find)](####查（find))
+  * [删(erase)](####删（erase）)
+  * [改(modify)](####改（modify）)
+  * [multi_index多索引](####multi_index多索引)
+  * [迭代器](####迭代器)
 
-## 1&#160;智能合约包含的文件
+## 智能合约包含的文件
 
 智能合约主要包含4个文件：`hpp`、`cpp`、`abi`、`wasm`，其中`abi`和`wasm`两个文件是由`eosio.cdt`编译工具生成，当然也可以自己编写`abi`。
 
-### 1.1&#160;hpp文件
+### hpp文件
 
 hpp文件包含cpp文件所引用的变量、常量、函数的声明。
 
-### 1.2&#160;cpp文件
+### cpp文件
 
 智能合约功能具体实现的源码。
 惯例，首先来上手写个打印hello world的智能合约，初步了解下智能合约。在通常的编译器上，编写hello world都是主动输出的，但是合约不同，它主要强调了互动性，EOS里面定义为action，智能合约会根据action作出相应回应。
@@ -52,7 +52,7 @@ EOSIO_DISPATCH(meetone::hello,(sayhello))
 ```
 这里类名和合约账户名没有关系，但是为了方便管理，合约文件名、类名以及合约账户最好能一致。合约只有一个`sayhello`action，里面只有一句打印的语句，任何用户都可以调用该action，相应的合约会打印 `Hello world! 用户名` 作为回应。一个合约里面可以定义多个action，而且这些action还可以互相调用。
 
-### 1.3&#160;wasm和abi文件
+### wasm和abi文件
 
 任何部署到EOS主网的智能合约都得编译为wasm格式，而abi(Application Binary Interface)则是可以让用户的action在JSON数据和二进制数据之间转换，通过abi实现使用者和智能合约之间的交互。
 有了上面的hpp和cpp文件就可通过[eosio.cdt](https://github.com/EOSIO/eosio.cdt)正式编译合约了。
@@ -65,7 +65,7 @@ contract是智能合约名，-abigen会生成abi文件。执行完上述命令�
 
 这是hello智能合约生成的abi文件，在abi文件里已经声明了sayhello这个action。
 
-## 2&#160;智能合约的部署
+## 智能合约的部署
 
 智能合约部署之前，需要为智能合约创建了一个对应账户。
 [创建账户](https://developers.eos.io/eosio-cleos/reference#cleos-create-account)：
@@ -77,7 +77,7 @@ cleos create account eosio hello <owener-key> <active-key>
 cleos set contract hello ../hello -p hello
 ```
 
-## 3&#160;智能合约的使用
+## 智能合约的使用
 
 部署好智能合约后，开发者或用户就可以使用该合约了，以下是`meetonetest1`账户调用`hello`智能合约的`sayhello`action：
 ```
@@ -90,7 +90,7 @@ cleos push action hello sayhello '["meetonetest1"]' -p meetonetest1
 
 `hello`合约的响应了`meetonetest1`用户的`sayhello`action操作，输出`Hello world!meetonetest1`。(开发人员需要注意的是：在EOS主网上面，print打印的消息是打印到打包的节点上，在本地是无法看到的)
 
-## 4&#160;apply()函数
+## apply()函数
 
 每个智能合约必须实现一个`apply()`函数，没错，是必须，那上面的hello合约为什么没有？其实hello合约并不是没有，因为在EOSIO_DISPATCH这个宏定义里已经实现了。
 ```c++
@@ -169,7 +169,7 @@ if (get_self() == from || get_self() != to) {
 
 而如果`meetonetest1`用`eosiomoreone`的`transfer`action给`hello`合约转`1.0000 MORE`，则不会调用合约中的方法。
 
-## 5&#160;合约中的权限
+## 合约中的权限
 
 对于一些特定的action，不希望他人也可以操作，这时候就需要加入权限的校验。
 ```c++
@@ -187,7 +187,7 @@ if (get_self() == from || get_self() != to) {
 
 当权限不是合约的权限时，系统会抛出异常提示缺少`hello`合约权限。也可以修改`require_auth(user)`则需要用户的权限。
 
-## 6&#160;inline&#160;action
+## inline action
 
 通过`inline action`可以在一个合约里面调用其他合约的action，也可以调用合约自身的其他action的。
 还是以hello合约为例子，修改sayhello：
@@ -220,7 +220,7 @@ std::make_tuple(get_self(), user, quantity, "hello " + user.to_string())
 
 `sayhello`传入2个参数一个是`meetonetest1`账户名和`quantity`转账数量，`hello`实现在合约中调用了`eosiomeetone`transfer给`meetonetest1`转`1.0000 MEETONE`。
 
-## 7&#160;数据的存储
+## 数据的存储
 
 智能合约执行结束后，所占用的内存会被释放。程序中的所有变量都会丢失，链上也不会有记录，因此合约要想持久记录有用的数据，就需要将数据存储到EOSIO数据库中。EOSIO是通过`eosio::multi_index`类来操作数据库。对数据操作主要的就是增、删、改、查种操作。
 仍旧以前文中的hello合约为例：
@@ -243,7 +243,7 @@ typedef eosio::multi_index<"book"_n, book> book_table;
 ```
 上面是`multi_index`的实例化`book`表：`"book"_n`是我们存储数据的表名。通过命令行查表中数据时需要用到。
 
-### 7.1&#160;增（emplace）
+### 增（emplace）
 
 ```c++
 const_iterator emplace(name payer, Lambda&& constructor)
@@ -302,7 +302,7 @@ cleos get table hello hello book
 
 ![image](smart-contract/eosio-smart-contract-empalce-table.png)
 
-### 7.2&#160;查（find)
+### 查（find)
 
 **find:** 通过主键查找数据表中已有记录
 
@@ -339,7 +339,7 @@ const T& get(uint64_t primary,
 }
 ```
 
-### 7.3&#160;删（erase）
+### 删（erase）
 
 **erase：** 根据主键删除主键对应对象
 ```c++
@@ -375,7 +375,7 @@ cleos push action hello deletedata '["2"]' -p hello
 
 ![image](smart-contract/eosio-smart-contract-erase.png)
 
-### 7.4&#160;改（modify）
+### 改（modify）
 
 **modify：** 修改表中已存在的对象
 ```c++
@@ -410,7 +410,7 @@ cleos push action hello modifydata '["0","1000.0000 MEETONE"]' -p hello
 
 这里我们修改`index`为`0`的`quantity`为`1000.0000 MEETONE`，执行成功后可以看到数据已成功修改。
 
-### 7.5&#160;multi_index多索引
+### multi_index多索引
 
 有的时候可能因为业务需求，一种索引方式可能无法满足需求，这时候需要添加多级索引。
 相对一级索引的类型只能是uint64_t，二级索引最多可以支持16个，而且二级索引类型不局限于uint64_t，支持的类型有：i64、i128、i256、ripemd168以及sha256。
@@ -467,7 +467,7 @@ cleos push action hello modifydata '["meetonetest2","1000.0000 MEETONE"]' -p hel
 
 成功修改`from`为`meetonetest2`记录的`quantity`值。
 
-### 7.6&#160;迭代器
+### 迭代器
 
 - `begin & cbegin：`返回对象表中指向最低主键值的迭代器
 - `end & cend：`返回对象表中指向最高主键值的迭代器
