@@ -11,10 +11,10 @@
 * [合约中的权限](#合约中的权限)
 * [inline action](#inline-action)
 * [数据的存储](#数据的存储)
-  * [增(emplace)](#增(emplace))
-  * [查(find)](#查(find))
-  * [删(erase)](#删(erase))
-  * [改(modify)](#改(modify))
+  * [增(emplace)](#增-emplace)
+  * [查(find)](#查-find)
+  * [删(erase)](#删-erase)
+  * [改(modify)](#改-modify)
   * [multi_index多索引](#multi_index多索引)
   * [迭代器](#迭代器)
 
@@ -79,7 +79,7 @@ cleos set contract hello ../hello -p hello
 
 ## 智能合约的使用
 
-部署好智能合约后，开发者或用户就可以使用该合约了，以下是`meetonetest1`账户调用`hello`智能合约的`sayhello`action：
+部署好智能合约后，开发者或用户就可以使用该合约了，以下是`meetonetest1`账户调用`hello`智能合约的`sayhello` action：
 ```
 cleos push action hello sayhello '["meetonetest1"]' -p meetonetest1
 ```
@@ -92,7 +92,7 @@ cleos push action hello sayhello '["meetonetest1"]' -p meetonetest1
 
 ## apply()函数
 
-每个智能合约必须实现一个`apply()`函数，没错，是必须，那上面的hello合约为什么没有？其实hello合约并不是没有，因为在EOSIO_DISPATCH这个宏定义里已经实现了。
+每个智能合约必须实现一个`apply()`函数，没错，是必须，那上面的hello合约为什么没有？其实hello合约并不是没有，而是在`EOSIO_DISPATCH`这个宏定义里已经实现了。
 ```c++
 #define EOSIO_DISPATCH( TYPE, MEMBERS ) \
 extern "C" { \
@@ -158,8 +158,8 @@ if (get_self() == from || get_self() != to) {
   return;
 }
 ```
-这个是为了防止合约被攻击，避免transfer假通知。可以参考文章[《EOS 智能合约最佳安全开发指南》](https://github.com/slowmist/eos-smart-contract-security-best-practices)。合约开发人员需要在合约上线前完成攻击测试和基础安全防御的部署。
-关键在于`apple()`函数，上面代码和`EOSIO_DISPATCH`相比多了`else if`的判断语句，当`apply`监听到有用户使用`eosiomeetone`合约的`tansfer`action给`hello`合约转账则会执行`hello`合约中的`on_transfer`方法。即使用其他合约的`tansfer`方法给hello合约转账，合约也不会有任何操作。`”eosiomeetone”_n`是将字符串`eosiomeetone`转成`eosio::name`类型，也可以写成`eosio::name{“eosiomeetone”}`。重新编译和部署hello合约测试：
+这个是为了防止合约被攻击，避免transfer假通知。可以参考文章[《EOS 智能合约最佳安全开发指南》](https://github.com/slowmist/eos-smart-contract-security-best-practices)，合约开发人员需要在合约上线前完成攻击测试和基础安全防御的部署。
+这里`apple()`函数和`EOSIO_DISPATCH`相比多了`else if`的判断语句，当`apply`监听到有用户使用`eosiomeetone`合约的`tansfer`action给`hello`合约转账则会执行`hello`合约中的`on_transfer`方法。即使用其他合约的`tansfer`方法给hello合约转账，合约也不会有任何操作。`”eosiomeetone”_n`是将字符串`eosiomeetone`转成`eosio::name`类型，也可以写成`eosio::name{“eosiomeetone”}`。重新编译和部署hello合约测试：
 
 ![image](smart-contract/eosio-smart-contract-on_transfer.png)
 
@@ -243,7 +243,7 @@ typedef eosio::multi_index<"book"_n, book> book_table;
 ```
 上面是`multi_index`的实例化`book`表：`"book"_n`是我们存储数据的表名。通过命令行查表中数据时需要用到。
 
-### 增(emplace)
+### 增 emplace
 
 ```c++
 const_iterator emplace(name payer, Lambda&& constructor)
@@ -302,7 +302,7 @@ cleos get table hello hello book
 
 ![image](smart-contract/eosio-smart-contract-empalce-table.png)
 
-### 查(find)
+### 查 find
 
 **find:** 通过主键查找数据表中已有记录
 
@@ -339,7 +339,7 @@ const T& get(uint64_t primary,
 }
 ```
 
-### 删(erase)
+### 删 erase
 
 **erase：** 根据主键删除主键对应对象
 ```c++
@@ -375,7 +375,7 @@ cleos push action hello deletedata '["2"]' -p hello
 
 ![image](smart-contract/eosio-smart-contract-erase.png)
 
-### 改(modify)
+### 改 modify
 
 **modify：** 修改表中已存在的对象
 ```c++

@@ -25,3 +25,5 @@
 2019-01-08 [eosio.token 合约分析](eosio-smart-contract-eosio.token.md)
 
 2019-01-09 [capi_checksum256 数据类型做table的索引](eosio-smart-contract-capi_checksum256-as-table-key.md)
+
+2019-01-12 [智能合约开发入门教程](eosio-smart-contract-how-to-program.md)
