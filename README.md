@@ -47,6 +47,8 @@
 
 ## Tools
 
+[sign & push transaction separately](https://github.com/EOSIO/eosjs/issues/306)
+
 [EOS Block Producer Benchmarks](https://www.alohaeos.com/tools/benchmarks#networkId=3&timeframeId=1)
 
 [EOS TITAN Labs](http://labs.eostitan.com/#/resources/?resource=cpu&period=72&n=1)
