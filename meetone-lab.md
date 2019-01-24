@@ -26,4 +26,8 @@
 
 2019-01-09 [capi_checksum256 数据类型做table的索引](eosio-smart-contract-capi_checksum256-as-table-key.md)
 
+2019-01-12 [智能合约开发入门教程](eosio-smart-contract-how-to-program.md)
+
+2019-01-15 [EOS账户权限管理](eosio-account-permission-management.md)
+
 2019-01-24 [Nodejs 实现监控告警](push-notification-to-im-using-nodejs.md)

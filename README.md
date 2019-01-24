@@ -45,6 +45,37 @@
 [support reverse iteration & show RAM payer in get table(1.5.0+ Only)](https://github.com/EOSIO/eos/pull/6264)
 
 
+## Tools
+
+[sign & push transaction separately](https://github.com/EOSIO/eosjs/issues/306)
+
+[EOS Block Producer Benchmarks](https://www.alohaeos.com/tools/benchmarks#networkId=3&timeframeId=1)
+
+[EOS TITAN Labs](http://labs.eostitan.com/#/resources/?resource=cpu&period=72&n=1)
+
+[ELEMENTAL BATTLES](https://battles.eos.io/)
+
+[snapshots](https://github.com/EOSIO/eos/pull/5956)
+
+[EOSIO Multisig Tutorial](https://steemit.com/eos/@genereos/eos-multisig-tutorial)
+
+[EOS-mongo-history-API](https://github.com/CryptoLions/EOS-mongo-history-API)
+
+[REX Implementation](https://github.com/EOSIO/eosio.contracts/issues/117)
+
+[EOS-state-history-API](https://github.com/acoutts/EOS-state-history-API)
+
+[EOS API PROXY](https://eosnode.tools/proxy)
+
+[eosgrapher by EOSCANADA](http://grapher.eoscanada.com/)
+
+[Full Nodes](https://steemit.com/eos/@greymass/consistency-in-configuration-of-public-eos-full-nodes)
+
+[EOS Proxy Info](https://github.com/AlohaEOS/eos-proxyinfo)
+
+[producerjson](https://github.com/greymass/producerjson)
+
+
 
 ## EOSIO Telegram Channel
 
