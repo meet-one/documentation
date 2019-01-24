@@ -52,4 +52,4 @@ continuous_rate = ln(1 + annual_rate)
 
 ## 参考
 
-#1537 [DAWN-651 ⁃ setting correct per-block "continuous inflation" so annual inflation is 5%](https://github.com/EOSIO/eos/issues/1537)
+\#1537 [DAWN-651 ⁃ setting correct per-block "continuous inflation" so annual inflation is 5%](https://github.com/EOSIO/eos/issues/1537)
