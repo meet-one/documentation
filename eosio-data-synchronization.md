@@ -14,13 +14,13 @@
 
 研究插件代码，发现 action_traces 是从 transaction_traces 拆出来的，是重复的，所以把 action_traces 去掉，这次成功追上主网区块高度。
 
-**踩坑**：transaction_traces 在查询 actions 时不太方便，因为 actions 是放到 transaction_traces 内部的一个数组，要查询具体一个 action 就得分两步走，先在 MongoDB 查询出某个 trx，然后再 actions 数组里遍历。数据库使用端的工程师觉得这样太麻烦，无奈继续放弃这到手的肥肉。
+**踩坑**：transaction_traces 在查询 actions 时不太方便，因为 actions 是放到 transaction_traces 内部的一个数组，要查询具体一个 action 就得分两步走，先在 MongoDB 查询出某个 trx，然后再 actions 数组里遍历。数据库使用端的工程师觉得这样太麻烦，无奈继续放弃这到手的肥肉。
 
 ## 3. 使用 MongoDB 插件同步 action_traces
 
 明确 action_traces 才是客户端想要的后，就只同步 action_traces。
 
-**踩坑**：action_traces 条数比 transaction_traces 多了三倍以上，又出现追不上区块的问题……
+**踩坑**：action_traces 条数比 transaction_traces 多了三倍以上，又出现追不上区块的问题……
 
 ## 4. 使用 MongoDB 插件同步 action_traces，但只要 transfer 数据
 
@@ -40,7 +40,7 @@
 
 做这个尝试很重要，因为发现重要的线索：
 
-- 大约在 2200 万块开始，nodeos 的处理速度下降很多，平均每块要 2-3ms，所以同步慢的原因在于跑 nodeos 的服务器的性能。
+- 大约在 2200 万块开始，nodeos 的处理速度下降很多，平均每块要 2-3ms，所以同步慢的原因在于跑 nodeos 的服务器的性能。
 
 - 在 1 开始的早期区块阶段，同时插入 transaction_traces 和 action_traces，并不能看出比只插入 action_traces 慢，说明 MongoDB 端压力很小。
 
@@ -50,7 +50,7 @@
 
 - MongoDB 集群，按之前的文章[《为 EOSIO MongoDB 插件搭建高可用集群》](mongodb-on-centos.md)的配置，插入阶段毫无压力。
 
-- 插件代码有些问题，需要优化，最明显的就是 queue_size 的设计不合理，打印处理时间太长的提示也不合理。
+- 插件代码有些问题，需要优化，最明显的就是 queue_size 的设计不合理，打印处理时间太长的提示也不合理。
 
   * queue 函数是个模板，所有的 queue 都调用它，但  max_queue_size 和 queue_sleep_time 缺只有一份，这可能导致一个 queue 导致的 queue_sleep_time 加大，影响到其它 queue，即整体的休眠时间会无用地加大。
 
