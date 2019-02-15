@@ -33,3 +33,5 @@
 2019-01-24 [Nodejs 实现监控告警](push-notification-to-im-using-nodejs.md)
 
 2019-02-03 [EOSIO 数据同步](eosio-data-synchronization.md)
+
+2019-02-15 [multi_index的erase批量删除处理](eosio-smart-contract-multi_index-erase.md)
