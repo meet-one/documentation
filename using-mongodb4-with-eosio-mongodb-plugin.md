@@ -30,7 +30,7 @@ grep "Version:" /usr/local/lib/pkgconfig/libmongocxx-static.pc
 Version: 3.3.2-pre
 
 # 编译
-./osio_build.sh
+./eosio_build.sh
 
 # 编译后
 grep "Version:" /usr/local/lib/pkgconfig/libmongocxx-static.pc
