@@ -38,4 +38,4 @@
 
 2019-02-22 [pm2 运维经验](pm2-ops.md)
 
-2019-03-04 [EOS 账户多签管理](eosio-multisig.md)
+2019-03-04 [EOSIO 账户多签管理](eosio-multisig.md)
