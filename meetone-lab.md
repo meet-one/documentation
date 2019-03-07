@@ -39,3 +39,5 @@
 2019-02-22 [pm2 运维经验](pm2-ops.md)
 
 2019-03-04 [EOSIO 账户多签管理](eosio-multisig.md)
+
+2019-03-07 [EOSIO 多签的合约账户部署合约](eosio-set-multisig-contract.md)
