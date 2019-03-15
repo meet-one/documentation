@@ -458,7 +458,6 @@ db.action_traces.createIndex({"act.data.to": 1, "_id":1},{background: true, spar
 db.action_traces.createIndex({"act.data.name": 1, "_id":1},{background: true, sparse: true})
 db.action_traces.createIndex({"act.data.voter": 1, "_id":1},{background: true, sparse: true})
 db.action_traces.createIndex({"act.authorization.actor": 1, "_id":1},{background: true, sparse: true})
-db.action_traces.createIndex({"act.account": 1, "_id":1},{background: true, sparse: true})
 db.action_traces.createIndex({"receipt.receiver": 1, "_id":1},{background: true, sparse: true})
 
 db.action_traces.createIndex({"block_num": 1, "_id":1},{background: true})
