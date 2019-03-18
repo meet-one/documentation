@@ -19,6 +19,6 @@
 
 [add get_table_by_scope to eosjs](https://github.com/EOSIO/eosjs/pull/514) \#514
 
-## By UMU618
+## By [@UMU618](https://github.com/UMU618)
 
 [Add API: getTableByScope](https://github.com/EOSIO/eosjs-api/pull/19) \#19
