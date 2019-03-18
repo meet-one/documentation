@@ -1,4 +1,4 @@
-# EOSIO PR from MEET.ONE
+# EOSIO PRs from MEET.ONE
 
 > Author: UMU @ MEET.ONE Lab
 
