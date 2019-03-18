@@ -13,13 +13,19 @@
 
 - [mongodb shard: line 870, code 61, generic server error](https://github.com/EOSIO/eos/issues/5488) \#5488
 
-# 2. eosjs
+# 2. eosio.cdt
+
+## By UMU618
+
+[support std::set\<eosio::permission_level\>](https://github.com/EOSIO/eosio.cdt/pull/200) \#200
+
+# 3. eosjs
 
 ## By wuyahuang
 
 [add get_table_by_scope to eosjs](https://github.com/EOSIO/eosjs/pull/514) \#514
 
-# 3. eosjs-api
+# 4. eosjs-api
 
 ## By UMU618
 
