@@ -1,11 +1,3 @@
-## MEET.ONE Products
-
-[EOS KIT - A Google Chrome extension for EOSIO users](https://chrome.google.com/webstore/detail/eos-kit/hiaddgihenoiohaoelnclcbjgjjflfhc)
-
-[MEET.ONE APP for Mobile Device](https://meet.one/download)
-
-[MORE.ONE APP for Mobile Device](http://more.one/)
-
 ## Translated/Created by MEET.ONE
 
 [EOSIO CPU资源分配原理分析 (原创)](EOSIO-CPU.md)
@@ -46,6 +38,8 @@
 
 
 ## Archive
+
+[IDE - EOS Studio](https://www.eosstudio.io/)
 
 [EOS BP howto to achieve max cpu performance for block porducing](https://github.com/atticlab/eos-bp-performance)
 

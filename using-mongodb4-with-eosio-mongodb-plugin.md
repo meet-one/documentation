@@ -44,3 +44,7 @@ Version: 3.4.0
 > [mongo-c-driver 1.13.0](https://github.com/mongodb/mongo-c-driver/releases/tag/1.13.0)
 >
 > [MongoDB C++11 Driver 3.4.0](https://github.com/mongodb/mongo-cxx-driver/releases/tag/r3.4.0)
+
+## 注意事项
+
+本文不适用于 v1.7.0。
