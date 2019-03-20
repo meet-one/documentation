@@ -49,7 +49,7 @@ cleos set contract hello ../hello -p hello@active
 
 这是添加权限前meetonetest1账户:
 
-![image](smart-contract/eosio-account-meetonetest1-permission.png)
+![image](../smart-contract/eosio-account-meetonetest1-permission.png)
 
 现在添加`finance`权限只用于转账，除了转账外无法进行其他操作：
 ```
@@ -57,17 +57,17 @@ cleos set contract hello ../hello -p hello@active
 cleos set account permission meetonetest1(账户名) finance(权限名称) '{"threshold": 1, "keys":[{"key":"EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV(权限公钥)","weight":1}],"accounts":[],"waits":[]}' active
 ```
 
-![image](smart-contract/eosio-account-meetonetest1-finance.png)
+![image](../smart-contract/eosio-account-meetonetest1-finance.png)
 
 可以看到在active权限底下增加了`finance`权限，但是此时使用`finance`权限进行任何操作都会抛出异常提示权限不足。
 
-![image](smart-contract/eosio-account-permission-no-set-action.png)
+![image](../smart-contract/eosio-account-permission-no-set-action.png)
 
 接下来我们给`finance`加入可以进行`eosio.token`合约的转账的权限，并测试转账功能：
 ```
 cleos set action permission meetonetest1(账户名) eosio.token(合约) transfer(合约action) finance(被设置权限名)
 ```
-![image](smart-contract/eosio-account-permission-finance-transfer.png)
+![image](../smart-contract/eosio-account-permission-finance-transfer.png)
 
 此时`finance`具有了转账的权限，当然`finance`此时也是只能进行`eosio.token`合约的转账，无法进行其他类型的操作。如果想`finance`能再加入其他操作的权限也是可以：
 ```
@@ -75,7 +75,7 @@ cleos set action permission meetonetest1(账户名) hello(合约) hi(合约actio
 ```
 这样`finance`就增加了可以执行`hello`合约`hi`的权限了。如果`meetonetest1`账户底下有权限已经加了该action，则权限会转移给`finance`，相应的之前的权限将失去执行`hi`action的权限。
 
-![image](smart-contract/eosio-account-permission-meetonetest1-finance-hi.png)
+![image](../smart-contract/eosio-account-permission-meetonetest1-finance-hi.png)
 
 ## 解除权限绑定的action
 
@@ -84,7 +84,7 @@ cleos set action permission meetonetest1(账户名) hello(合约) hi(合约actio
 cleos set action permission meetonetest1(账户名) hello(合约) hi(合约action) NULL(删除)
 ```
 
-![image](smart-contract/eosio-account-permission-meetonetest1-finance-hi-delete.png)
+![image](../smart-contract/eosio-account-permission-meetonetest1-finance-hi-delete.png)
 
 删除后使用`finance`权限执行`hello`合约`hi`action会抛出权限异常的错误。
 
@@ -96,9 +96,9 @@ cleos set action permission meetonetest1(账户名) hello(合约) hi(合约actio
 cleos set account permission meetonetest1(账户) finance(需要删除的权限) NULL(代表删除) active(finance所属的父类权限)
 ```
 
-![image](smart-contract/eosio-account-permission-meetonetest1-finance-delete.png)
+![image](../smart-contract/eosio-account-permission-meetonetest1-finance-delete.png)
 
-![image](smart-contract/eosio-account-permission-meetonetest1-no-finance.png)
+![image](../smart-contract/eosio-account-permission-meetonetest1-no-finance.png)
 
 ## 总结
 
