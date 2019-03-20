@@ -9,11 +9,11 @@
 cleos -u http://kylin.meet.one:8888 set account permission meetonehello active '{"threshold":2,"keys":[],"accounts":[{"permission":{"actor":"meetdotone21","permission":"active"},"weight":1},{"permission":{"actor":"meetdotone22","permission":"active"},"weight":1},{"permission":{"actor":"meetdotone23","permission":"active"},"weight":1}],"waits":[]}' owner -p meetonehello@active 
 ```
 
-![image](smart-contract/eosio-multisig.png)
+![image](../smart-contract/eosio-multisig.png)
 
 可以看到`active`由公钥变为上面设置的3个账户的`active`权限。此时如果使用`meetonehello`的`active`进行任何操作，都会返回权限问题的错误：
 
-![image](smart-contract/eosio-multisig-transfer.jpg)
+![image](../smart-contract/eosio-multisig-transfer.jpg)
 
 
 ## 发起多签提案
@@ -33,7 +33,7 @@ cleos multisig review proposer proposal_name
 cleos -u http://kylin.meet.one:8888 multisig review meetdotone21 transfer
 ```
 
-![image](smart-contract/eosio-multisig-review.jpg)
+![image](../smart-contract/eosio-multisig-review.jpg)
 
 ## 批准多签提案
 
@@ -52,6 +52,6 @@ cleos -u http://kylin.meet.one:8888 multisig approve meetdotone21 transfer '{"ac
 ```
 cleos -u http://kylin.meet.one:8888 multisig exec meetdotone21 transfer -p meetdotone21@active
 ```
-![image](smart-contract/eosio-multisig-exec.jpg)
+![image](../smart-contract/eosio-multisig-exec.jpg)
 
 现在交易已经执行，可以看到`1 EOS `成功从`meetonehello`转给了`meetdotone21`。
