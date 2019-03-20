@@ -39,6 +39,8 @@
 
 ## Archive
 
+[Step-by-step guide to learning eosjs API for integration with EOSIO-based blockchains](https://github.com/meet-one/eosjs-guide)
+
 [IDE - EOS Studio](https://www.eosstudio.io/)
 
 [EOS BP howto to achieve max cpu performance for block porducing](https://github.com/atticlab/eos-bp-performance)
