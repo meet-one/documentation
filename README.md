@@ -1,18 +1,18 @@
 ## Translated/Created by MEET.ONE
 
-[EOSIO CPU资源分配原理分析 (原创)](EOSIO-CPU.md)
+[EOSIO CPU资源分配原理分析 (原创)](docs/EOSIO-CPU.md)
 
-[EOSIO技术白皮书 (第二版)](EOSIO-whitepaper-2.0-Chinese.md)
+[EOSIO技术白皮书 (第二版)](docs/EOSIO-whitepaper-2.0-Chinese.md)
 
-[EOSIO主网启动流程 (原创)](EOSIO-BIOS.md)
+[EOSIO主网启动流程 (原创)](docs/EOSIO-BIOS.md)
 
-[一张图看懂EOS/ETH发行代币的区别 (原创)](EOS-TOKEN-FLOW.md)
+[一张图看懂EOS/ETH发行代币的区别 (原创)](docs/EOS-TOKEN-FLOW.md)
 
-[EOS ICO 智能合约解读 (原创)](EOSCrowdsale.md)
+[EOS ICO 智能合约解读 (原创)](docs/EOSCrowdsale.md)
 
-[DAPP Tutorial/指南(原创)](dapp-tutorial.md)
+[DAPP Tutorial/指南(原创)](docs/dapp-tutorial.md)
 
-## [MEET.ONE 实验室专栏](meetone-lab.md)
+[MEET.ONE 实验室专栏 ( 21篇 )](meetone-lab-docs.md)
 
 ## Smart Contract
 
