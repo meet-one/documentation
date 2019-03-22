@@ -44,7 +44,7 @@
 
 下图是过去一周，主网每个 EOS 对应的 CPU 使用量变化图，每一分钟都在变化。
 
-![image](assets/CPU-Resource-Costs.png)
+![image](../assets/CPU-Resource-Costs.png)
 
 有同学问为什么不直接把 max_block_cpu_usage 跟 target_block_cpu_usage_pct 的值调到最大呢，这样可以最大范围的减少主网进入拥堵模式的次数。
 

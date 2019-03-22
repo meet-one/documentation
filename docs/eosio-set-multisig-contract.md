@@ -13,7 +13,7 @@
 
 `hello`在刚创建时配置了一对`owner`和`active`密钥。在部署合约之前将`hello`账户的`active`权限设置为2/3的多签账户，即需要3个管理账户中的2个以上同意就可以授权`hello`的执行交易。
 
-![image](smart-contract/eosio-set-multisig-contract-hello.jpg)
+![image](../smart-contract/eosio-set-multisig-contract-hello.jpg)
 
 ## 生成用于部署合约的交易
 

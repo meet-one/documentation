@@ -50,7 +50,7 @@ ACTION deleteacnts() {
 
 但是这时候会执行失败：
 
-![image](smart-contract/eosio-smart-contract-multi_index-erase.png)
+![image](../smart-contract/eosio-smart-contract-multi_index-erase.png)
 
 原因是因为 erase 动作执行后 it 迭代器就立刻失效了。
 正确的处理方法：
