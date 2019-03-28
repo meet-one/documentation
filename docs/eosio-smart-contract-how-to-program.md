@@ -61,7 +61,7 @@ eosio-cpp -contract=${contract} -abigen ${contract}.cpp -o ${contract}.wasm
 ```
 contract是智能合约名，-abigen会生成abi文件。执行完上述命令行后会同时生成wasm和abi文件。
 
-![image](smart-contract/eosio-smart-contract-hello-abi.png)
+![image](../smart-contract/eosio-smart-contract-hello-abi.png)
 
 这是hello智能合约生成的abi文件，在abi文件里已经声明了sayhello这个action。
 
@@ -86,7 +86,7 @@ cleos push action hello sayhello '["meetonetest1"]' -p meetonetest1
 `hello`是智能合约账户名，`sayhello`是`hello`合约中的action，`meetonetest1`是action需要传入的参数，-p表示为该action提供权限的账户。
 执行上述命令行结果：
 
-![image](smart-contract/eosio-smart-contract-sayhello-action.png)
+![image](../smart-contract/eosio-smart-contract-sayhello-action.png)
 
 `hello`合约的响应了`meetonetest1`用户的`sayhello`action操作，输出`Hello world!meetonetest1`。(开发人员需要注意的是：在EOS主网上面，print打印的消息是打印到打包的节点上，在本地是无法看到的)
 
@@ -161,11 +161,11 @@ if (get_self() == from || get_self() != to) {
 这个是为了防止合约被攻击，避免transfer假通知。可以参考文章[《EOS 智能合约最佳安全开发指南》](https://github.com/slowmist/eos-smart-contract-security-best-practices)，合约开发人员需要在合约上线前完成攻击测试和基础安全防御的部署。
 这里`apple()`函数和`EOSIO_DISPATCH`相比多了`else if`的判断语句，当`apply`监听到有用户使用`eosiomeetone`合约的`tansfer`action给`hello`合约转账则会执行`hello`合约中的`on_transfer`方法。即使用其他合约的`tansfer`方法给hello合约转账，合约也不会有任何操作。`”eosiomeetone”_n`是将字符串`eosiomeetone`转成`eosio::name`类型，也可以写成`eosio::name{“eosiomeetone”}`。重新编译和部署hello合约测试：
 
-![image](smart-contract/eosio-smart-contract-on_transfer.png)
+![image](../smart-contract/eosio-smart-contract-on_transfer.png)
 
 `meetonetest1`用`eosiomeetone`的`transfer`action给`hello`合约转`100.0000 MEETONE`，此时会调用合约中`on_transfer`打印出红框内信息。
 
-![image](smart-contract/eosio-smart-contract-eosiomoreone-transfer.png)
+![image](../smart-contract/eosio-smart-contract-eosiomoreone-transfer.png)
 
 而如果`meetonetest1`用`eosiomoreone`的`transfer`action给`hello`合约转`1.0000 MORE`，则不会调用合约中的方法。
 
@@ -181,9 +181,9 @@ if (get_self() == from || get_self() != to) {
 ```
 这里给`sayhello`加入`require_auth()`权限校验，`get_self()`指`hello`合约本身，因此执行`sayhello`时需要用到合约的`active`权限，才能执行该action。
 
-![image](smart-contract/eosio-smart-contract-sayhello-auth.png)
+![image](../smart-contract/eosio-smart-contract-sayhello-auth.png)
 
-![image](smart-contract/eosio-smart-contract-sayhello-noauth.png)
+![image](../smart-contract/eosio-smart-contract-sayhello-noauth.png)
 
 当权限不是合约的权限时，系统会抛出异常提示缺少`hello`合约权限。也可以修改`require_auth(user)`则需要用户的权限。
 
@@ -208,7 +208,7 @@ cleos set account permission hello active '{"threshold": 1,"keys": [{"key": "EOS
 ```
 通过`cleos get account hello`可以查看`hello`账户的active权限已经加入了`hello@eosio.code`权限，这样就可以在正常使用inline action了。
 
-![image](smart-contract/eosio-smart-contract-hello-set-eosio.code.png)
+![image](../smart-contract/eosio-smart-contract-hello-set-eosio.code.png)
 
 `“eoisomeetone”_n`和`”transfer”_n`分别指调用的合约以及合约中的action.
 ```
@@ -216,7 +216,7 @@ std::make_tuple(get_self(), user, quantity, "hello " + user.to_string())
 ```
 是给`transfer`传入的4个参数。最后通过`send()`将该action广播出去。重新编译部署上述合约来测试一下：
 
-![image](smart-contract/eosio-smart-contract-sayhello-inline-action.png)
+![image](../smart-contract/eosio-smart-contract-sayhello-inline-action.png)
 
 `sayhello`传入2个参数一个是`meetonetest1`账户名和`quantity`转账数量，`hello`实现在合约中调用了`eosiomeetone`transfer给`meetonetest1`转`1.0000 MEETONE`。
 
@@ -292,7 +292,7 @@ books.emplace(get_self(), [&](auto& b) {
 ```
 emplace是数据插入方法，`[&](auto& b){}`是一个`lambda`表达式，`available_primary_key()`是根据主键值自增。这样每转账一笔就会在`book`表中插入一条数据。
 
-![image](smart-contract/eosio-smart-contract-emplace.png)
+![image](../smart-contract/eosio-smart-contract-emplace.png)
 
 这里`meetonetest1`给`hello`合约转了`10.0000 MEETONE`，留言 `“for test”`，可通过以下命令行查询插入的数据情况:
 ```
@@ -300,7 +300,7 @@ cleos get table hello hello book
 ```
 第一个hello是合约账户名，第二个hello是前文中提到的scope，book是表名。上面可以看到book表成功的增加一条记录。查询结果：
 
-![image](smart-contract/eosio-smart-contract-empalce-table.png)
+![image](../smart-contract/eosio-smart-contract-empalce-table.png)
 
 ### 查 find
 
@@ -365,7 +365,7 @@ const_iterator erase(const_iterator itr)
 ```
 `find`方法根据`book`的`index`主键值进行查找对应对象的迭代器并返回，因此主键值如果不唯一的话就无法明确删除对应数据。在测试之前先在`book`表中先插入多条数据：
 
-![image](smart-contract/eosio-smart-contract-hello-table.png)
+![image](../smart-contract/eosio-smart-contract-hello-table.png)
 
 在`book`表中一共存储了5条数据，接下来会用命令行调用`deletedata`删除其中一条记录:
 ```
@@ -373,7 +373,7 @@ cleos push action hello deletedata '["2"]' -p hello
 ```
 这里我们指定了删除主键`index`为2的数据，查表可以看到index为2的数据已经被删除:
 
-![image](smart-contract/eosio-smart-contract-erase.png)
+![image](../smart-contract/eosio-smart-contract-erase.png)
 
 ### 改 modify
 
@@ -406,7 +406,7 @@ void modify(const_iterator itr, name payer, Lambda&& updater)
 cleos push action hello modifydata '["0","1000.0000 MEETONE"]' -p hello
 ```
 
-![image](smart-contract/eosio-smart-contract-modify.png)
+![image](../smart-contract/eosio-smart-contract-modify.png)
 
 这里我们修改`index`为`0`的`quantity`为`1000.0000 MEETONE`，执行成功后可以看到数据已成功修改。
 
@@ -443,7 +443,7 @@ typedef eosio::multi_index<"book"_n, book,
 
 增加索引方式之前，如果table表中已经有数据，则之后添加的数据才能被索引到，之前的数据不能被新增的索引方式检索到。这里我们先使用上一节的`deletedate`action删除数据表中所有数据，再重新添加4条记录，from来自不同账户：
 
-![image](smart-contract/eosio-smart-contract-re-emplace.png)
+![image](../smart-contract/eosio-smart-contract-re-emplace.png)
 
 ```c++
 [[eosio::action]] void modifydata(eosio::name from, eosio::asset quantity) {
@@ -463,7 +463,7 @@ typedef eosio::multi_index<"book"_n, book,
 cleos push action hello modifydata '["meetonetest2","1000.0000 MEETONE"]' -p hello
 ```
 
-![image](smart-contract/eosio-smart-contract-multi_index-modify.png)
+![image](../smart-contract/eosio-smart-contract-multi_index-modify.png)
 
 成功修改`from`为`meetonetest2`记录的`quantity`值。
 

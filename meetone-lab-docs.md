@@ -41,3 +41,7 @@
 2019-03-04 [EOSIO 账户多签管理](docs/eosio-multisig.md)
 
 2019-03-07 [EOSIO 多签的合约账户部署合约](docs/eosio-set-multisig-contract.md)
+
+2019-03-21 [从程序员的角度思考什么是区块链](docs/what-is-blockchain.md)
+
+2019-03-22 [单例模式 (Multi_index singleton)](docs/eosio-singleton.md)

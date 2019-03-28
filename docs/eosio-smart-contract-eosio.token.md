@@ -34,7 +34,7 @@ cleos set contract eosio.token ../eosio.token
 cleos get code eosio.token 
 ```
 
-![image](smart-contract/code-hash.png)
+![image](../smart-contract/code-hash.png)
 
 hash值存在说明已成功部署。
 
@@ -93,7 +93,7 @@ typedef eosio::multi_index< "stat"_n, currency_stats > stats;
 ```
 执行完上述`create`action后eosio.token合约会创建一张名为`stat`表，以下是查询`stat`表数据的命令：
 
-![image](smart-contract/eosio.token-create-action-stat.png)
+![image](../smart-contract/eosio.token-create-action-stat.png)
 
 **命令行:**
 
@@ -179,11 +179,11 @@ void token::add_balance( name owner, asset value, name ram_payer )
 `add_balance`在`issue`、`transfer`是会被调用，用于增加用户token账户的余额。
 上文通过命令行空投给`meetonetest1`后，当前可流通量supply增加`1000.0000 SYS`，以下是查询结果：
 
-![image](smart-contract/eosio.token-issue-action-stat.png)
+![image](../smart-contract/eosio.token-issue-action-stat.png)
 
 同时查询`meetonetest1`的`accounts`表可以看到`balance`多了条记录，这是由eosio空投给`meetonetest1`的`1000.0000 SYS`，这样市面上就有`1000.0000 SYS` 可以流通了。
 
-![image](smart-contract/eosio.token-issue-action-meetonetest1-accounts.png)
+![image](../smart-contract/eosio.token-issue-action-meetonetest1-accounts.png)
 
 ## 转账(transfer)
 
@@ -249,7 +249,7 @@ void token::sub_balance( name owner, asset value ) {
 ```
 空投时ram payer是`issuer`，空投后的首次转账，ram payer会变为转账时候的`from`账户。直到由用户自己转出时，ram payer会一直固定为用户本身。
 
-![image](smart-contract/eosio.token-transfer-action-meetonetest2-accounts.png)
+![image](../smart-contract/eosio.token-transfer-action-meetonetest2-accounts.png)
 
 ## 缩减可流通量(retire)
 
@@ -292,7 +292,7 @@ void token::retire( asset quantity, string memo )
 和`issue`action流程类似相同，只是在最后对`stat`表的操作时`retire`是用的`sub_balance`来减少流通量，而`issue`是`add_balance`来增加流通量。
 执行完上述`retire`命令后:
 
-![image](smart-contract/eosio.token-retire-action-stat.png)
+![image](../smart-contract/eosio.token-retire-action-stat.png)
 
 可以看到`retire`后，可流通的量减少了。
 
@@ -332,7 +332,7 @@ void token::open( name owner, const symbol& symbol, name ram_payer )
 - `ram_payer`：为添加记录消耗ram的账户
 执行上述命令行后结果：
 
-![image](smart-contract/eosio.token-open-action-meetonetest5-accounts.png)
+![image](../smart-contract/eosio.token-open-action-meetonetest5-accounts.png)
 
 上述命令行执行后`meetonetest1`会为`meetonetest5`的`accounts`表添加一条token为`SYS`的balance记录，而`meetonetest1`会为添加这条数据支付相应的ram费用。
 
@@ -365,6 +365,6 @@ void token::close( name owner, const symbol& symbol )
 - `symbol`: 需要删除的token
 执行完上述命令后：
 
-![image](smart-contract/eosio.token-close-action-meetonetest5-accounts.png)
+![image](../smart-contract/eosio.token-close-action-meetonetest5-accounts.png)
 
 这命令将`meetonetest5`的`accounts`表中token为`SYS`的记录删除，当然前提条件是balance值必须为0，同时为该条`balance`记录支付ram的`meetonetest1`账户会收回当时支付的ram。

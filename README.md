@@ -12,7 +12,7 @@
 
 [DAPP Tutorial/指南(原创)](docs/dapp-tutorial.md)
 
-[MEET.ONE 实验室专栏 ( 21篇 )](meetone-lab-docs.md)
+[MEET.ONE 实验室专栏 ( 23篇 )](meetone-lab-docs.md)
 
 ## Smart Contract
 
@@ -38,6 +38,8 @@
 
 
 ## Archive
+
+[Step-by-step guide to learning eosjs API for integration with EOSIO-based blockchains](https://github.com/meet-one/eosjs-guide)
 
 [IDE - EOS Studio](https://www.eosstudio.io/)
 
