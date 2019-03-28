@@ -8,10 +8,11 @@
 
 [change core symbol name length to 7(MEETONE)](https://github.com/EOSIO/eos/pull/5958) \#5958
 
-
 [fix issue 5488](https://github.com/EOSIO/eos/pull/6498) \#6498
 
 - [mongodb shard: line 870, code 61, generic server error](https://github.com/EOSIO/eos/issues/5488) \#5488
+
+[Optimize mongodb plugin](https://github.com/EOSIO/eos/pull/6990) \#6990
 
 # 2. eosio.cdt
 

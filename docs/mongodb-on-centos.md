@@ -463,9 +463,11 @@ db.action_traces.createIndex({"receipt.receiver": 1, "_id":1},{background: true,
 db.action_traces.createIndex({"block_num": 1, "_id":1},{background: true})
 db.action_traces.createIndex({"block_time": 1, "_id":1},{background: true})
 
+db.transaction_traces.createIndex({"id": 1, "_id":1},{background: true})
+
 sh.enableSharding("EOS")
 sh.shardCollection("EOS.action_traces", {"_id" : 1},  true)
-sh.shardCollection("EOS.transaction_traces", {"id" : "hashed"})
+sh.shardCollection("EOS.transaction_traces", {"_id" : 1},  true)
 ```
 
 ### 11. 【可选】安装 EOSIO 1.5
