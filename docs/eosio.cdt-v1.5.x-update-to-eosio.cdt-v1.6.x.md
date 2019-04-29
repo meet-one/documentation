@@ -75,18 +75,18 @@ C API 不再适用于基于 C++ 开发的合约。如果想用继续使用 C API
 
 1. 合约不能没有 ACTION, 所以不管有用没用都得加一个。
 
-错误信息：
-```
-**wasm-ld: error: fatal failure: contract with no actions and trying to create dispatcher**
-```
+   错误信息：
+   ```
+   **wasm-ld: error: fatal failure: contract with no actions and trying to create dispatcher**
+   ```
 
 2. 想用使用通配符 `*` 类型的通知处理 `[[eosio::on_notify("*::<action name>")]]` 则必须要同时写一个明确的通知处理 `[[eosio::on_notify("<code account>::<action name>")]]`
 
-错误信息：
-```
-error: else expression without matching if
-000035b: error: OnElseExpr callback failed 
-```
+   错误信息：
+   ```
+   error: else expression without matching if
+   000035b: error: OnElseExpr callback failed 
+   ```
 
 3. 使用 `eosio::check_transaction_authorization` 时会有警告信息，主要是应为没有 retrun 值的原因。
 
