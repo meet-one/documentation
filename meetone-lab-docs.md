@@ -45,3 +45,5 @@
 22. 2019-03-21 [从程序员的角度思考什么是区块链](docs/what-is-blockchain.md)
 
 23. 2019-03-22 [单例模式 (Multi_index singleton)](docs/eosio-singleton.md)
+
+24. 2019-04-29 [EOSIO.CDT v1.6.x](eosio.cdt-v1.5.x-update-to-eosio.cdt-v1.6.x.md)
