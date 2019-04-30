@@ -47,3 +47,5 @@
 23. 2019-03-22 [单例模式 (Multi_index singleton)](docs/eosio-singleton.md)
 
 24. 2019-04-29 [EOSIO.CDT v1.6.x](docs/eosio.cdt-v1.5.x-update-to-eosio.cdt-v1.6.x.md)
+
+25. 2019-04-30 [pre_dispatch 和 post_dispatch](docs/eosio-pre_dispatch-post_dispatch.md)
