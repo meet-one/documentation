@@ -1,4 +1,4 @@
-# EOSIO 1.8.0-rc1详解
+# EOSIO 1.8.0-rc1 详解
 
 > Author: MEET.ONE Lab
 
@@ -9,33 +9,31 @@ block.one 于 4 月 30 日发布了 EOSIO 1.8.0-rc1 版本,该版本发布了全
 
 ## 建议升级方案。
 
-```
-1. 社区所有节点以及所有 DAPP 节点的 nodeos 升级到 1.7.x 版本。
-2. 备份 data-dir 目录中的三个目录 blocks/reversible，state-history，state。
-3. 将 nodeos 升级至 1.8.x 新版本。
-4. 启动 nodeos 从创世区块开始 replay, 注意 1.8.x 版本仅兼容 1.7.x 版本。
-5. 所有节点升级至 1.8.x 版本。
-6. 激活 PREACTIVATE_FEATURE 协议。
-7. 部署最新版本系统合约。
-8. 激活其他共识协议。
-```
+
+> 1. 社区所有节点以及所有 DAPP 节点的 nodeos 升级到 1.7.x 版本。
+> 2. 备份 data-dir 目录中的三个目录 blocks/reversible，state-history，state。
+> 3. 将 nodeos 升级至 1.8.x 新版本。
+> 4. 启动 nodeos 从创世区块开始 replay, 注意 1.8.x 版本仅兼容 1.7.x 版本。
+> 5. 所有节点升级至 1.8.x 版本。
+> 6. 激活 PREACTIVATE_FEATURE 协议。
+> 7. 部署最新版本系统合约。
+> 8. 激活其他共识协议。
+
 
 ## 超级节点注意事项
 
-```
-1. 超级节点在升级过程中，需要保证出块节点不下线，否则将出现丢块以及出块共识无法达成的问题。
-2. PREACTIVATE_FEATURE 被激活以后,所有 1.7.x 版本的节点将停止同步区块,且不可逆块不再更新, 因此一定要提前公布预计激活时间,给社区节点足够的时间升级至 1.8.x。
-3. PREACTIVATE_FEATURE 被激活且系统合约升级至最新版本以后,其他的共识协议可以通过 15/21 多签执行系统合约的 activate 函数开启。
-4. 出块节点升级至 1.8.x 以后,需要保证 15/21 的出块节点在 protocol_features/BUILTIN-PREACTIVATE_FEATURE.json 配置文件中设置同样的 earliest_allowed_activation_time 参数, 以防 PREACTIVATE_FEATURE 协议被提前激活。
-```
+> 超级节点在升级过程中，需要保证出块节点不下线，否则将出现丢块以及出块共识无法达成的问题。
+> PREACTIVATE_FEATURE 被激活以后,所有 1.7.x 版本的节点将停止同步区块,且不可逆块不再更新, 因此一定要提前公布预计激活时间,给社区节点足够的时间升级至 1.8.x。
+> PREACTIVATE_FEATURE 被激活且系统合约升级至最新版本以后,其他的共识协议可以通过 15/21 多签执行系统合约的 activate 函数开启。
+> 出块节点升级至 1.8.x 以后,需要保证 15/21 的出块节点在 protocol_features/BUILTIN-PREACTIVATE_FEATURE.json 配置文件中设置同样的 earliest_allowed_activation_time 参数, 以防 PREACTIVATE_FEATURE 协议被提前激活。
+
 
 
 ## 区块浏览器、交易所、DApp 注意事项
 
-```
-1. 1.8.x 调整了 transaction traces 的数据结构, 如果有使用 history_plugin, mongo_db_plugin, state_history_plugin 请确认这两个 PR 是否对你们业务代码有影响。[7044](https://github.com/EOSIO/eos/pull/7044) & [7108](https://github.com/EOSIO/eos/pull/7108)
-2. state_history_plugin 插件的 API 以及存储在磁盘的文件结构也被修改了, 需要升级至最新版本。
-```
+> 1.8.x 调整了 transaction traces 的数据结构, 如果有使用 history_plugin, mongo_db_plugin, state_history_plugin 请确认这两个 PR 是否对你们业务代码有影响。[7044](https://github.com/EOSIO/eos/pull/7044) & [7108](https://github.com/EOSIO/eos/pull/7108)
+> 2. state_history_plugin 插件的 API 以及存储在磁盘的文件结构也被修改了, 需要升级至最新版本。
+
 
 
 ## 1.8.x 新功能简介
