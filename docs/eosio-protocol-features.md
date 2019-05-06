@@ -97,5 +97,7 @@ block.one 于 4 月 30 日发布了 EOSIO 1.8.0-rc1 版本,该版本发布了全
 参考文章:
 
 [EOSIO<sup>TM</sup> Version 1.8.0-rc1: EOSIO Consensus Protocol Upgrade Release Candidate for Enhanced Security and Usability Features](https://medium.com/eosio/eosio-version-1-8-0-rc1-2d2d68995bbe)
+
 [EOSIO v1.8.0-rc1 Release Notes](https://github.com/EOSIO/eos/releases/tag/v1.8.0-rc1)
+
 [Consensus Protocol Upgrade Process](https://github.com/EOSIO/eos/issues/7237)
