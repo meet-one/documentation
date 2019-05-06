@@ -1,84 +1,103 @@
-# EOSIO 1.8.0-rc1 协议特征
+# EOSIO 1.8.0-rc1详解
 
-> Author: UMU @ MEET.ONE Lab
+> Author: MEET.ONE Lab
 
-本文简略摘抄自《[EOSIO<sup>TM</sup> Version 1.8.0-rc1: EOSIO Consensus Protocol Upgrade Release Candidate for Enhanced Security and Usability Features](https://medium.com/eosio/eosio-version-1-8-0-rc1-2d2d68995bbe)》
+block.one 于 4 月 30 日发布了 EOSIO 1.8.0-rc1 版本,该版本发布了全新的共识升级机制, 且新增了 11 个共识协议选项, 由于该升级机制需要所有 BP 升级到1.8.x 才能激活, 而 1.8.x 版本不与 1.7.x 以下的版本兼容, 导致它的升级流程相对之前更加复杂。
 
-EOSIO 1.8.0-rc1 版本带来一些列共识协议升级，使它的升级流程相对之前升级复杂。
+开发这套共识升级机制最根本的原因在于 block.one 希望 EOSIO 主网可以变的更加去中心化, 目前只要 EOSIO 发布了全新的版本, 所有超级节点只有升级或不升级两个选项, 如果某个新版本有紧急需要修复的 BUG, 但是又有某些超级节点不认可的新功能, 这种情况会非常尴尬, 因此 1.8.x 的这次更新非常之重要, 把权力下放给社区, 由社区决定新功能是否上线。
 
-## 1. BP 们需要协商哪些特征要启用和启用的时刻
 
-> As long as more than two-thirds of the active block producers have set the same future time in the configuration file for the PREACTIVATE_FEATURE on their BP nodes, the network will be safe from any attempts at premature activation by some other active BP.
+## 建议升级方案。
 
-需要 2/3 的活跃 BP（即至少 15 个），设定同一时间才能生效。
+```
+1. 社区所有节点以及所有 DAPP 节点的 nodeos 升级到 1.7.x 版本。
+2. 备份 data-dir 目录中的三个目录 blocks/reversible，state-history，state。
+3. 将 nodeos 升级至 1.8.x 新版本。
+4. 启动 nodeos 从创世区块开始 replay, 注意 1.8.x 版本仅兼容 1.7.x 版本。
+5. 所有节点升级至 1.8.x 版本。
+6. 激活 PREACTIVATE_FEATURE 协议。
+7. 部署最新版本系统合约。
+8. 激活其他共识协议。
+```
 
-## 2. 启用 producer_api_plugin
+## 超级节点注意事项
 
-启用 producer_api_plugin 以激活协议特征，安全原因，操作成功后建议关闭。
+```
+1. 超级节点在升级过程中，需要保证出块节点不下线，否则将出现丢块以及出块共识无法达成的问题。
+2. PREACTIVATE_FEATURE 被激活以后,所有 1.7.x 版本的节点将停止同步区块,且不可逆块不再更新, 因此一定要提前公布预计激活时间,给社区节点足够的时间升级至 1.8.x。
+3. PREACTIVATE_FEATURE 被激活且系统合约升级至最新版本以后,其他的共识协议可以通过 15/21 多签执行系统合约的 activate 函数开启。
+4. 出块节点升级至 1.8.x 以后,需要保证 15/21 的出块节点在 protocol_features/BUILTIN-PREACTIVATE_FEATURE.json 配置文件中设置同样的 earliest_allowed_activation_time 参数, 以防 PREACTIVATE_FEATURE 协议被提前激活。
+```
 
-## 3. 协议特征用途简介
 
-### 1. PREACTIVATE_FEATURE
+## 区块浏览器、交易所、DApp 注意事项
+
+```
+1. 1.8.x 调整了 transaction traces 的数据结构, 如果有使用 history_plugin, mongo_db_plugin, state_history_plugin 请确认这两个 PR 是否对你们业务代码有影响。[7044](https://github.com/EOSIO/eos/pull/7044) & [7108](https://github.com/EOSIO/eos/pull/7108)
+2. state_history_plugin 插件的 API 以及存储在磁盘的文件结构也被修改了, 需要升级至最新版本。
+```
+
+
+## 1.8.x 新功能简介
+
+#### 1. PREACTIVATE_FEATURE
 
 \([#6431](https://github.com/EOSIO/eos/issues/6431)\) Enable protocol feature pre-activation
 
-需要首先被激活，才能激活其它特征。
+预激活协议,被激活以后,所有 1.7.x 版本的节点将停止同步区块,且不可逆块不再更新。此协议被激活以后,才能继续激活下列其他协议。
 
-### 2. ONLY_LINK_TO_EXISTING_PERMISSION
+#### 2. ONLY_LINK_TO_EXISTING_PERMISSION
 
 \([#6333](https://github.com/EOSIO/eos/issues/6333)\) Disallow linking to non-existing permission
 
-不允许不存在的权限。非安全问题，减少用户困扰。
+禁止通过系统合约的 linkauth 绑定一个不存在的账户权限。在 1.8.x 以下的版本如果用户尝试给一个合约的 action 添加一个不存在的自定义账户权限,可以添加成功,而且如果想要 unlink 必须先创建这个不存在的账户权限,有点反人类。
 
-### 3. FIX_LINKAUTH_RESTRICTION
+#### 3. FIX_LINKAUTH_RESTRICTION
 
 \([#6672](https://github.com/EOSIO/eos/issues/6672)\) Fix excessive restrictions of eosio::linkauth
 
-之前如果把合约 Action 名字取成 updateauth, deleteauth, linkauth, unlinkauth, or canceldelay，则在自定义这些 Action 的最小权限时将遇到麻烦。
+在 1.8.x 以下的版本, 如果尝试给非系统合约的 updateauth, deleteauth, linkauth, unlinkauth, or canceldelay 这五个 action 添加自定义账户权限会报错, 因为底层代码有 BUG 没有判断合约名是否为 eosio,导致所有的都无法添加,激活此协议以后,这个 BUG 将会被修复。
 
-### 4. DISALLOW_EMPTY_PRODUCER_SCHEDULE
+#### 4. DISALLOW_EMPTY_PRODUCER_SCHEDULE
 
 \([#6458](https://github.com/EOSIO/eos/issues/6458)\) Disallow proposing an empty producer schedule
 
-改进合理性。原来允许设置空的计划列表，空表会进入 Pending 状态，但不会转正，现在不允许设置空表。
+修复在 1.8.x 以下的版本, set_proposed_producers 允许传入空 Schedule 的 BUG, 虽然当前空 Schedule 会进入 Pending 状态,但是不会被激活,不会出现异常。
 
-### 5. RESTRICT_ACTION_TO_SELF
+#### 5. RESTRICT_ACTION_TO_SELF
 
 \([#6705](https://github.com/EOSIO/eos/issues/6705)\) Restrict authorization checking when sending actions to self
 
-改进安全性。即使调用合约自身的 Action 也要传入权限。
-
-### 6. REPLACE_DEFERRED
+#### 6. REPLACE_DEFERRED
 
 \([#6103](https://github.com/EOSIO/eos/issues/6103)\) Fix problems associated with replacing deferred transaction
 
-修复 bug：以前 RAM 没还回。
-
-### 7. NO_DUPLICATE_DEFERRED_ID
+#### 7. NO_DUPLICATE_DEFERRED_ID
 
 \([#6115](https://github.com/EOSIO/eos/issues/6115)\) Avoid transaction ID collision of deferred transactions
 
-改进合理性。依赖 REPLACE_DEFERRED。onerror 通知里的结构体会稍微改变，可能导致需要重写合约。
-
-### 8. RAM_RESTRICTIONS
+#### 8. RAM_RESTRICTIONS
 
 \([#6105](https://github.com/EOSIO/eos/issues/6105)\) Modify restrictions on RAM billing
 
-只要 RAM 最终不消耗，可以在中间临时增加。
-
-### 9. ONLY_BILL_FIRST_AUTHORIZER
+#### 9. ONLY_BILL_FIRST_AUTHORIZER
 
 \([#6332](https://github.com/EOSIO/eos/issues/6332)\) Only bill CPU and network bandwidth to the first authorizer of a transaction
 
-合约可以为第一级直接用户买 CPU 和 NET 资源。
+智能合约账户承担用户消耗的 CPU 和 NET 资源。
 
-### 10. FORWARD_SETCODE
+#### 10. FORWARD_SETCODE
 
 \([#6988](https://github.com/EOSIO/eos/issues/6988)\) Forward setcode action to WebAssembly code deployed on eosio account
 
-合约部署时，系统合约可以得到通知。
-
-### 11. GET_SENDER
+#### 11. GET_SENDER
 \([#7028](https://github.com/EOSIO/eos/issues/7028)\) Allow contracts to determine which account is the sender of an inline action
 
-被调用者可以知道是哪个合约调用它，减少滥用 require_receipient。
+智能合约新增 get_sender 函数,允许合约获取当前调用 inline_action 的账户。
+
+
+参考文章:
+
+[EOSIO<sup>TM</sup> Version 1.8.0-rc1: EOSIO Consensus Protocol Upgrade Release Candidate for Enhanced Security and Usability Features](https://medium.com/eosio/eosio-version-1-8-0-rc1-2d2d68995bbe)
+[EOSIO v1.8.0-rc1 Release Notes](https://github.com/EOSIO/eos/releases/tag/v1.8.0-rc1)
+[Consensus Protocol Upgrade Process](https://github.com/EOSIO/eos/issues/7237)
