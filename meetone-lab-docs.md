@@ -49,3 +49,5 @@
 24. 2019-04-29 [EOSIO.CDT v1.6.x](docs/eosio.cdt-v1.5.x-update-to-eosio.cdt-v1.6.x.md)
 
 25. 2019-04-30 [pre_dispatch 和 post_dispatch](docs/eosio-pre_dispatch-post_dispatch.md)
+
+26. 2019-05-06 [EOSIO 1.8.0-rc1 协议特征](docs/eosio-protocol-features.md)
