@@ -51,3 +51,5 @@
 25. 2019-04-30 [pre_dispatch 和 post_dispatch](docs/eosio-pre_dispatch-post_dispatch.md)
 
 26. 2019-05-06 [EOSIO 1.8.0-rc1 协议特征](docs/eosio-protocol-features.md)
+
+27. 2019-05-07 [智能合约 table 的二级索引之 checksum256](docs/eosio-checksum256-table-key.md)
