@@ -127,7 +127,7 @@ struct [[eosio::table("byhash"), eosio::contract("test")]] byhash {
   // id 为一级索引
   uint64_t primary_key() const { return id; }
   // hash 作为二级索引 (主要修改此处)
-  *eosio::checksum256 by_hash() const { return checksum256_to_sha256(hash); }*  
+  eosio::checksum256 by_hash() const { return checksum256_to_sha256(hash); }
   // 参数序列化，可有可无，加入的话可以提升编译速度
   EOSLIB_SERIALIZE(byhash, (id)(user)(hash))
 };
