@@ -55,6 +55,7 @@ Base58check 编码过程：
 5. 对 S3 做 base58 编码，得到最终编码结果。
 
 原始数据是指私钥经过 `secp256k1` 椭圆曲线加密算法得到的（这是一个不可逆的过程，所以想从公钥推出私钥是不可能的，只能做一些验证），上述是 Base58check 编码过程，但是在 EOS 上做了一些变动，checksum 取的是 ripemd160 后的前 4 个字节作为校验码。[click me](https://github.com/EOSIO/eosjs-ecc/blob/7ec577cad54e17da6168fdfb11ec2b09d6f0e7f0/src/key_utils.js#L191)
+
 **Base58check 解码**
 
 1. 对数据进行 Base58 解码，得到 D1；
