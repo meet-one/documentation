@@ -55,3 +55,5 @@
 27. 2019-05-07 [智能合约 table 的二级索引之 checksum256](docs/eosio-checksum256-table-key.md)
 
 28. 2019-05-09 [智能合约之公钥的解析](docs/eosio-public-key-decode.md)
+
+29. 2019-05-14 [Action 包装器 action_wrapper](docs/eosio-smart-contract-action_wrapper.md)
