@@ -57,3 +57,5 @@
 28. 2019-05-09 [智能合约之公钥的解析](docs/eosio-public-key-decode.md)
 
 29. 2019-05-14 [Action 包装器 action_wrapper](docs/eosio-smart-contract-action_wrapper.md)
+
+30. 2019-05-28 [EOSIO从零开始到发币](docs/EOSIO从零开始到发币.md)
