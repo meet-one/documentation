@@ -669,7 +669,7 @@ cleos push action eosioawesome close '["eosio.token","4,AWESOME"]' -p eosio.toke
 例如：
 
 ```
-cleos -u https://api.eoslaomao.com set contract eosioawesome ../eosio.token
+cleos -u https://mainnet.meet.one set contract eosioawesome ../eosio.token
 ```
 
 ## 总结
