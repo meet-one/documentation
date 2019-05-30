@@ -1,4 +1,16 @@
-# EOSIO从零开始到发币
+# EOSIO 从零开始到发币
+
+## 目录
+* [EOSIO 客户端的安装](#EOSIO-客户端的安装)
+* [创建钱包](#创建钱包)
+* [本地配置和运行测试环境](#本地配置和运行测试环境)
+  * [安装智能合约编译工具 eosio.cdt](#安装智能合约编译工具-eosio.cdt)
+  * [编译和部署系统相关合约](#编译和部署系统相关合约)
+  * [创建和发行系统代币](#创建和发行系统代币)
+  * [初始化系统合约](#初始化系统合约)  
+* [发行自己的代币](#发行自己的代币)
+* [如何连接主网](#如何连接主网)
+* [总结](#总结)
 
 ## EOSIO 客户端的安装
 
@@ -153,6 +165,7 @@ cleos wallet unlock -n awesome
 
 ## 本地配置和运行测试环境
 
+如果不想在本地搭建测试环境可以跳过该部分，或者在 [kylin](https://github.com/cryptokylin/CryptoKylin-Testnet) 上测试。
 首先在根目录下创建一个叫 `test` 的文件夹，在文件夹底下创建一个叫 `config-dir` 的文件，需要配置一个 `config.ini ` 的文件，可以从 [EOISO 的 github 仓库下载](https://github.com/EOSIO/eos/blob/master/Docker/config.ini)。最后的目录结构如下：
 
 ```
@@ -268,7 +281,7 @@ brew install eosio.cdt
 eosio-cpp -version
 ```
 
-### 编译系统相关合约
+### 编译和部署系统相关合约
 
 先看一下 `test` 目录下的 `eosio.contract` 目录文件树：
 
@@ -404,7 +417,6 @@ cleos set contract eosioawesome ../eosio.token
 ```
 
 ### action 
-
 
 **创建token (create)**
 
