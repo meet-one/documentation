@@ -14,6 +14,16 @@
 
 [MEET.ONE 实验室专栏 ( 30篇 )](meetone-lab-docs.md)
 
+## EOS Mainnet Snapshots
+
+[Snapshots from MEET.ONE](https://github.com/meet-one/eos-mainnet-ops)
+
+[Snapshots from EOS Newyork](https://www.eossnapshots.io/)
+
+[Snapshots from EOS Sweden](https://snapshots.eossweden.org/)
+
+[Snapshots from Block Matrix](https://eosnode.tools/proxy)
+
 ## Smart Contract
 
 [support secondary key in get table without the need of modifying abi file](https://github.com/EOSIO/eos/pull/4053)
@@ -55,7 +65,7 @@
 
 [ELEMENTAL BATTLES](https://battles.eos.io/)
 
-[snapshots](https://github.com/EOSIO/eos/pull/5956)
+[What is snapshot](https://github.com/EOSIO/eos/pull/5956)
 
 [EOSIO Multisig Tutorial](https://steemit.com/eos/@genereos/eos-multisig-tutorial)
 
