@@ -16,8 +16,6 @@
 
 ## EOS Mainnet Snapshots
 
-[Snapshots from MEET.ONE](https://github.com/meet-one/eos-mainnet-ops)
-
 [Snapshots from EOS Newyork](https://www.eossnapshots.io/)
 
 [Snapshots from EOS Sweden](https://snapshots.eossweden.org/)
