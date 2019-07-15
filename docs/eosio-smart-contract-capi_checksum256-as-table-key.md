@@ -1,6 +1,6 @@
-# 如何使用capi_checksum256作为table的key
+# 如何使用 capi_checksum256 作为 table的key
 
-## capi_checksum256作为table的secondary_key
+## capi_checksum256 作为 table 的 secondary_key
 
 由于primary_key类型规定是uint64_t，而sha256是256位，强制类型转换会导致信息丢失，严格意义上是不能作为primary_key。
 secondary_key则可以使用多种类型包括(i64, i128, i256, float64, float128, ripemd160, sha256)。那么这里就可以使用sha256作为索引，不过capi_checksum256也需要先进行转换。
@@ -17,7 +17,7 @@ static eosio::checksum256 checksum256_to_sha256(const capi_checksum256& hash) {
 }
 ```
 
-**table的定义:**
+**table 的定义:**
 
 ```c++
 struct [[eosio::table("byhash"), eosio::contract("testcontract")]] byhash {
@@ -43,6 +43,22 @@ typedef eosio::multi_index<
         eosio::const_mem_fun<byhash, eosio::checksum256, &byhash::by_hash>>>
     hash_table;
 ```
+
+**合约中cap_checksum256数据的生成:**
+
+```c++
+cap_checksum256 testcontract::get_hash(){
+  capi_checksum256 transaction_id;
+  auto size = transaction_size();
+  char* buf = new char[size];
+  uint32_t read = read_transaction(buf, size);
+  sha256(buf, read, &transaction_id);
+  delete[] buf;
+  sha256(buff, read, &transaction_id);
+  return transaction_id;
+}
+```
+cap_checksum256是交易id的类型，通过上面`get_hash()`函数可以获得当前交易区块的transaction id
 
 **合约中数据的添加:**
 

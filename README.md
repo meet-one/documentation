@@ -12,7 +12,15 @@
 
 [DAPP Tutorial/指南(原创)](docs/dapp-tutorial.md)
 
-[MEET.ONE 实验室专栏 ( 25篇 )](meetone-lab-docs.md)
+[MEET.ONE 实验室专栏 ( 30篇 )](meetone-lab-docs.md)
+
+## EOS Mainnet Snapshots
+
+[Snapshots from EOS Newyork](https://www.eossnapshots.io/)
+
+[Snapshots from EOS Sweden](https://snapshots.eossweden.org/)
+
+[Snapshots from Block Matrix](https://eosnode.tools/proxy)
 
 ## Smart Contract
 
@@ -55,7 +63,7 @@
 
 [ELEMENTAL BATTLES](https://battles.eos.io/)
 
-[snapshots](https://github.com/EOSIO/eos/pull/5956)
+[What is snapshot](https://github.com/EOSIO/eos/pull/5956)
 
 [EOSIO Multisig Tutorial](https://steemit.com/eos/@genereos/eos-multisig-tutorial)
 
