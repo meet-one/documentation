@@ -8,6 +8,17 @@
 
 **理由**：[Visual Studio Code](https://code.visualstudio.com/) 脑残粉跟随 [Microsoft](https://github.com/Microsoft)/[vscode](https://github.com/Microsoft/vscode) 使用 yarn。
 
+参考 [yarn 安装](https://yarnpkg.com/en/docs/install#debian-stable)，其中 Ubuntu 下命令为：
+
+```
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+sudo apt-get update && sudo apt-get install --no-install-recommends yarn
+```
+
+使用 yarn 安装 pm2：
+
 ```
 yarn global add pm2
 ```
@@ -29,6 +40,12 @@ yarn global bin
 
 ```
 /home/ubuntu/.yarn/bin/pm2 start my-program.js
+```
+
+自适应路径的命令为：
+
+```
+`yarn global bin`/pm2 start my-program.js
 ```
 
 ## 安全建议
