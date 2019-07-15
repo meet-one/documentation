@@ -14,7 +14,9 @@
 
 ## EOSIO 客户端的安装
 
-```
+macOS 为例：
+
+```shell
 brew tap eosio/eosio
 brew install eosio
 ```
@@ -60,7 +62,7 @@ Subcommands:
 
 命令行：
 
-```
+```shell
 cleos wallet create --to-console
 ```
 
@@ -78,7 +80,7 @@ Without password imported keys will not be retrievable.
 **查看钱包**
 
 ```
-➜  test git:(master) ✗ cleos wallet list                  
+➜  test git:(master) ✗ cleos wallet list
 Wallets:
 [
   "default *"
@@ -149,7 +151,7 @@ imported private key for: EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 
 **关闭钱包**
 
-```
+```shell
 cleos wallet lock_all
 ```
 
@@ -157,7 +159,7 @@ cleos wallet lock_all
 
 **解锁钱包**
 
-```
+```shell
 cleos wallet unlock -n awesome
 ```
 
@@ -179,7 +181,7 @@ test
 
 运行以下命令：
 
-```
+```shell
 nodeos --data-dir ./data-dir --config-dir ./config-dir --contracts-console -e --access-control-allow-origin='*'
 ```
 
@@ -251,7 +253,7 @@ cpu bandwidth:
 
 **创建系统相关的账户**
 
-```
+```shell
 cleos create account eosio eosio.msig EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 cleos create account eosio eosio.names EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
 cleos create account eosio eosio.ram EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV
@@ -264,20 +266,22 @@ cleos create account eosio eosio.token EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHu
 
 在 `test` 目录下执行下面命令行下载合约。
 
-```
+```shell
 git clone git@github.com:EOSIO/eosio.contracts.git
 ```
 
 ### 安装智能合约编译工具 eosio.cdt
 
-```
+macOS 为例：
+
+```shell
 brew tap eosio/eosio.cdt
 brew install eosio.cdt
 ```
 
 查看当前 `eosio.cdt` 版本:
 
-```
+```shell
 eosio-cpp -version
 ```
 
@@ -315,7 +319,7 @@ eosio.contracts
 
 在 `eosio.system` 目录下执行：
 
-```
+```shell
 eosio-cpp -contract=eosio.system -abigen ./src/eosio.system.cpp -o eosio.system.wasm -I=/usr/local/include/ -I=./include/ -I=../eosio.token/include
 ```
 
@@ -349,7 +353,7 @@ executed transaction: c497a35c452972693eb4f8d2b96aa85dd4715586d769dc2db4424e4e8d
 
 在 `eosio.token` 目录下执行：
 
-```
+```shell
 eosio-cpp -contract=eosio.token -abigen ./src/eosio.token.cpp -o eosio.token.wasm -I=/usr/local/include/ -I=./include/
 ```
 
@@ -371,19 +375,19 @@ executed transaction: 4ba2724ad4327aff3b83d04e154619a936684b82b65c63495f6605cc28
 
 使用 `eosio.token` 的 `create` action 创建本地测试网络系统代币 `EOS`, 发行者为 `eosio`
 
-```
+```shell
 cleos push action eosio.token create '["eosio", "1000000000.0000 EOS"]' -p eosio.token
 ```
 
 使用 `eosio.token` 的 `issue` action 发行可以流通的 `EOS` 的数量。
 
-``` 
+```shell
 cleos push action eosio.token issue '["eosio", "1000000000.0000 EOS", "memo" ]' -p eosio
 ```
 
 ### 初始化系统合约
 
-```
+```shell
 cleos push action eosio init '["0","4,EOS"]' -p eosio 
 ```
 
@@ -395,18 +399,18 @@ cleos push action eosio init '["0","4,EOS"]' -p eosio
 
 在发行代币之前，当然首先得有个 EOSIO 的账户：
 
-```
+```shell
 cleos system newaccount eosio eosioawesome EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV --stake-net "1.0000 EOS" --stake-cpu "100.0000 EOS" --buy-ram "100.0000 EOS"
 ```
 
-这里使用 `eosio` 账户创建 `eosioawesome` 并为其抵押了 1 个 EOS 的 NET 和 100 个 EOS 的 CPU，同时为其买了 100 个 EOS的 RAM, 在实际的用于部署合约的话需要实现计算好需要消耗的 RAM。
+这里使用 `eosio` 账户创建 `eosioawesome` 并为其抵押了 1 EOS 的 NET 和 100 EOS 的 CPU，同时为其买了 100 EOS 的 RAM, 在实际的用于部署合约的话需要实现计算好需要消耗的 RAM。
 以 1.6.x 版本的 eosio.token 合约，1.6.1 版本的 eosio.cdt 编译器为例：通过编译器生成的 eosio.token.wasm 文件大小是 25786 byte，eosio.token.abi 文件大小是 4426 byte，部署到主网需要消耗的 RAM 是：
 
 ```
-.wasm*10 + .abi
+.wasm * 10 + .abi
 ```
 
-也就是 262286 byte。按目前主网的 RAM 价格1KB = 0.1348 EOS计算，需要至少支付 35 个EOS。
+也就是 262286 byte。按目前主网的 RAM 价格1KB = 0.1348 EOS 计算，需要至少支付 35 EOS。
 
 **部署合约**
 
@@ -416,7 +420,7 @@ cleos system newaccount eosio eosioawesome EOS6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8B
 cleos set contract eosioawesome ../eosio.token 
 ```
 
-### action 
+### action
 
 **创建token (create)**
 
@@ -431,7 +435,7 @@ void token::create(name issuer, asset maximum_supply)
 
 命令行：
 
-```
+```shell
 cleos push action eosioawesome create '["eosioawesome", "1000000000.0000 AWESOME"]' -p eosioawesome
 ```
 
@@ -469,7 +473,7 @@ void token::issue(name to, asset quantity, string memo)
 
 命令行：
 
-```
+```shell
 cleos push action eosioawesome issue '["eosioawesome", "100.0000 AWESOME","test"]' -p eosioawesome
 ```
 
@@ -520,7 +524,7 @@ void token::transfer( name    from,
 - `quantity`: 转出金额
 - `memo`: 留言
 
-```
+```shell
 cleos push action eosioawesome transfer '["eosioawesome","eosio","10.0000 AWESOME","hello eosio"]' -p eosioawesome
 ```
 
@@ -565,16 +569,16 @@ void token::retire( asset quantity, string memo )
 
 命令行：
 
-```
+```shell
 cleos push action eosioawesome retire '["50.0000 AWESOME","for retire"]' -p eosioawesome
 ```
 
-既然有增加流通量的 `issue`，自然也有缩减流通量的 action，上面的 `retire` 就是用于缩减当前流通量。缩减的前提是 `issuer` 账户的余额必须大于要缩减的数量。这里将回收`50.0000 AWESOME`来缩减当前可流通量。
+既然有增加流通量的 `issue`，自然也有缩减流通量的 action，上面的 `retire` 就是用于缩减当前流通量。缩减的前提是 `issuer` 账户的余额必须大于要缩减的数量。这里将回收 `50.0000 AWESOME` 来缩减当前可流通量。
 
 查看 `eosioawesome` 余额表：
 
 ```
-➜  eosio.token git:(master) ✗ cleos get table eosioawesome eosioawesome accounts                                                                
+➜  eosio.token git:(master) ✗ cleos get table eosioawesome eosioawesome accounts
 {
   "rows": [{
       "balance": "40.0000 AWESOME"
@@ -588,8 +592,8 @@ cleos push action eosioawesome retire '["50.0000 AWESOME","for retire"]' -p eosi
 
 查看 `stat` 表：
 
-```
-cleos get table eosioawesome AWESOME stat                                                         
+```shell
+cleos get table eosioawesome AWESOME stat
 {
   "rows": [{
       "supply": "50.0000 AWESOME",
@@ -617,13 +621,13 @@ void token::open( name owner, const symbol& symbol, name ram_payer )
 
 命令行：
 
-```
+```shell
 cleos push action eosioawesome open '["eosio.token","4,AWESOME","eosioawesome"]' -p eosioawesome
 ```
 
 `ram_payer` 账户和 `-p` 的账户名必须一致。在没有使用 `open` 前查看 `eosio.token` 的 `accounts` 表:
 
-```
+```shell
 ➜  eosio.token git:(master) ✗ cleos get table eosioawesome eosio.token accounts
 {
   "rows": [],
@@ -633,8 +637,8 @@ cleos push action eosioawesome open '["eosio.token","4,AWESOME","eosioawesome"]'
 
 使用命令行后：
 
-```
-➜  eosio.token git:(master) ✗ cleos get table eosioawesome eosio.token accounts                                                
+```shell
+➜  eosio.token git:(master) ✗ cleos get table eosioawesome eosio.token accounts
 {
   "rows": [{
       "balance": "0.0000 AWESOME"
@@ -643,6 +647,7 @@ cleos push action eosioawesome open '["eosio.token","4,AWESOME","eosioawesome"]'
   "more": false
 }
 ```
+
 上述命令行执行后 `eosioawesome` 会为 `eosio.token` 创建 `accounts` 表其中，相当于在银行开户了，而 `ram_payer` 也就是 `eosioawesome` 会为创建这条数据支付相应的 RAM 费用。
 
 **删除 token 余额表 (close)**
@@ -658,7 +663,7 @@ void token::close( name owner, const symbol& symbol )
 
 命令行：
 
-```
+```shell
 cleos push action eosioawesome close '["eosio.token","4,AWESOME"]' -p eosio.token
 ```
 
@@ -666,7 +671,7 @@ cleos push action eosioawesome close '["eosio.token","4,AWESOME"]' -p eosio.toke
 
 执行后结果：
 
-```
+```shell
 ➜  eosio.token git:(master) ✗ cleos get table eosioawesome eosio.token accounts
 {
   "rows": [],
@@ -680,7 +685,7 @@ cleos push action eosioawesome close '["eosio.token","4,AWESOME"]' -p eosio.toke
 
 例如：
 
-```
+```shell
 cleos -u https://mainnet.meet.one set contract eosioawesome ../eosio.token
 ```
 
