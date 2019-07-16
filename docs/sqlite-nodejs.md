@@ -8,7 +8,7 @@
 
 安装：
 
-```
+```shell
 yarn add sqlite3
 ```
 
@@ -16,7 +16,7 @@ yarn add sqlite3
 
 ### 创建数据库
 
-```
+```nodejs
 const path = require('path')
 const sqlite = require('sqlite3')
 
@@ -49,7 +49,7 @@ db.close()
 
 ### 插入数据
 
-```
+```nodejs
 const items = [
   { hash: 'D141925E39814FB5256615A1A94EC82B7043D983F68423D8C149A2AE360B623C'
     , ts: 1563273661316, state: 0 }
@@ -76,7 +76,7 @@ db.serialize(() => {
 
 ### 查询
 
-```
+```nodejs
 db.serialize(() => {
   db.each("SELECT * FROM test WHERE state=0", (err, row) => {
     if (err) {
@@ -92,7 +92,7 @@ db.serialize(() => {
 
 ### 更新
 
-```
+```nodejs
 db.run("UPDATE test SET state=1 WHERE state=0", (err) => {
     if (err) {
       console.error('UPDATE txs error:', err)
