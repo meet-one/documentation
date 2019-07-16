@@ -8,7 +8,7 @@
 
 安装：
 
-```shell
+```bash
 yarn add sqlite3
 ```
 
