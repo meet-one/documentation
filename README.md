@@ -22,9 +22,11 @@
 
 [Snapshots from Block Matrix](https://eosnode.tools/proxy)
 
-## Blockchain
+## Blockchain Consensus
 
 [A-to-Z of Blockchain Consensus](https://medium.com/tendermint/a-to-z-of-blockchain-consensus-81e2406af5a3)
+
+[DPOS BFT— Pipelined Byzantine Fault Tolerance](https://medium.com/eosio/dpos-bft-pipelined-byzantine-fault-tolerance-8a0634a270ba)
 
 ## Smart Contract
 
