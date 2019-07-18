@@ -22,6 +22,10 @@
 
 [Snapshots from Block Matrix](https://eosnode.tools/proxy)
 
+## Blockchain
+
+[A-to-Z of Blockchain Consensus](https://medium.com/tendermint/a-to-z-of-blockchain-consensus-81e2406af5a3)
+
 ## Smart Contract
 
 [support secondary key in get table without the need of modifying abi file](https://github.com/EOSIO/eos/pull/4053)
