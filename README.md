@@ -12,7 +12,7 @@
 
 [DAPP Tutorial/指南(原创)](docs/dapp-tutorial.md)
 
-[MEET.ONE 实验室专栏 ( 30篇 )](meetone-lab-docs.md)
+[MEET.ONE 实验室专栏 ( 31篇 )](meetone-lab-docs.md)
 
 ## EOS Mainnet Snapshots
 

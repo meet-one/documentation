@@ -59,3 +59,5 @@
 29. 2019-05-14 [Action 包装器 action_wrapper](docs/eosio-smart-contract-action_wrapper.md)
 
 30. 2019-05-28 [EOSIO从零开始到发币](docs/EOSIO从零开始到发币.md)
+
+31. 2019-08-07 [进阶：多签的管理账户也是多签账户](docs/double-multisig-deploy-contract.md)
