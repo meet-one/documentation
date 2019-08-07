@@ -237,6 +237,22 @@ executed transaction: 7bf3515ecb8923a53f11c322a32bf87e2a3e18e96b23fff5515239aa93
 即使是非管理账户也可以执行。当然非得要用多签账户执行的话，可以参考步骤 `8` 的方式
 
 
+10. 测试
+
+验证合约是否已经正常部署
+
+```
+cleos -u http://kylin.meet.one:8888 get code meetonehello
+code hash: d54fbc86080cd692ed7698733ea8593420da268e564209b67c701936f2dfee60
+
+cleos -u http://kylin.meet.one:8888 push action meetonehello hi '["meetone"]' -p meetdotone11
+executed transaction: 26a518602b6b6dc727cb49af32ff3a5aced21630b5d4bfbbe244c264836097e2  104 bytes  799 us
+#  meetonehello <= meetone hello::hi             {"user":"meetone"}
+warning: transaction executed locally, but may not be confirmed by the network yet         ] 
+```
+
+all done.
+
 ## 总结
  
 多签账户 `A` 的管理账户之一 `B` 也为多签账户，此时由 `B` 发起一笔和 `A` 相关的多签提案，首先 `B` 在本地生成离线的多签交易，然后使用 `B` 多签管理账户对之前生成的离线交易发起多签提案，待 `B` 的多签管理账户都同意并执行后，`B` 发起的关于 `A` 相关的多签提案被会被自动提交，此时等待 `A` 的其他多签管理账户同意和执行即可，麻烦点当然可以按文中的方法让 `B` 同意提案和执行提案。
