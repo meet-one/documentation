@@ -13,7 +13,7 @@
 5. 对上面 4 个随机数进行 SHA-256 hash，生成 32 字节的随机数。
 
 
-[Source Code](https://github.com/EOSIO/eosjs-ecc/blob/master/src/key_utils.js#L49)
+[Source Code](https://github.com/EOSIO/eosjs-ecc/blob/master/src/key_utils.js#L32)
 
 
 ### 将私钥转成 WIF 钱包导入格式(Wallet Import Format)
