@@ -2,7 +2,7 @@
 
 > 作者: UMU @ MEET.ONE 实验室
 
-上一篇文章中我们分享了 eosjs-ecc 是如何生成私钥的，这篇将会介绍私钥转换公钥的过程。 [eosjs-ecc 是如何生成私钥的](how-is-a-private-key-generated.md)
+上一篇文章中我们分享了 [eosjs-ecc 是如何生成私钥的](how-is-a-private-key-generated.md)，这篇将会介绍私钥转换公钥的过程。
 
 ## 基本知识
 
