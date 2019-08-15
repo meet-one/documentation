@@ -65,3 +65,5 @@
 32. 2019-08-08 [智能合约替用户承担事务的开销](https://github.com/meet-one/documentation/blob/master/docs/eosio-accept_charges.md)
 
 33. 2019-08-15 [eosjs-ecc 是如何生成私钥的](docs/how-is-a-private-key-generated.md)
+
+34. 2019-08-15 [基于 ECC 的私钥转为公钥的过程](docs/private-key-to-public-key.md)
