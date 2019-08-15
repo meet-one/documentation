@@ -63,4 +63,4 @@ ce145d282834c009c24410812a60588c1085b63d65a7effc2e0a5e3a2e21b236
 
 [Wallet Import Format Specification (WIF)](https://developers.eos.io/keosd/docs/wallet-import-format-specification-wif)
 
-写一篇文章我们就会分享[基于 ECC 的私钥转为公钥的过程](private-key-to-public-key.md)
+下一篇文章我们将会分享[基于 ECC 的私钥转为公钥的过程](private-key-to-public-key.md)
