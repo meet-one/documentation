@@ -63,3 +63,5 @@
 31. 2019-08-07 [进阶：多签的管理账户也是多签账户](docs/double-multisig-deploy-contract.md)
 
 32. 2019-08-08 [智能合约替用户承担事务的开销](https://github.com/meet-one/documentation/blob/master/docs/eosio-accept_charges.md)
+
+33. 2019-08-15 [eosjs-ecc 是如何生成私钥的](docs/how-is-a-private-key-generated.md)

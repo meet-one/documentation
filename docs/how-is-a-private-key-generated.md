@@ -13,6 +13,9 @@
 5. 对上面 4 个随机数进行 SHA-256 hash，生成 32 字节的随机数。
 
 
+[eosjs-ecc](https://github.com/EOSIO/eosjs-ecc/blob/master/src/key_utils.js#L49)
+
+
 ### 将私钥转成 WIF 钱包导入格式(Wallet Import Format)
 
 1. 假如我们通过上一步骤生成了一个全是 0 的 256 位的私钥，将其转换成 32 字节。
