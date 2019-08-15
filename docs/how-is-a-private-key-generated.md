@@ -2,23 +2,23 @@
 
 ### 生成 256 位的私钥
 
-1. 通过 [randombytes](https://github.com/crypto-browserify/randombytes) 生成一个 32 字节的随机数。
+1. 通过 [randombytes](https://github.com/crypto-browserify/randombytes) 生成一组 32 字节的随机数。
 
 2. 在 1 秒内进行 128 次浮点运算，通过衡量每一次运算的 CPU 速度变化生成一组随机数。
 
-3. 通过 [randombytes](https://github.com/crypto-browserify/randombytes) 生成一个 101 字节的随机数。
+3. 通过 [randombytes](https://github.com/crypto-browserify/randombytes) 生成一组 101 字节的随机数。
 
 4. 获取浏览器窗口大小 + 语言种类 + 历史记录长度 + mime 类型生成随机数。
 
 5. 对上面 4 个随机数进行 SHA-256 hash，生成 32 字节的随机数。
 
 
-[eosjs-ecc](https://github.com/EOSIO/eosjs-ecc/blob/master/src/key_utils.js#L49)
+[Source Code](https://github.com/EOSIO/eosjs-ecc/blob/master/src/key_utils.js#L49)
 
 
 ### 将私钥转成 WIF 钱包导入格式(Wallet Import Format)
 
-1. 假如我们通过上一步骤生成了一个全是 0 的 256 位的私钥，将其转换成 32 字节。
+1. 假如我们通过上一步骤生成了一组全是 0 的 256 位的私钥，将其转换成 32 字节。
 
 ```
 0000000000000000000000000000000000000000000000000000000000000000
