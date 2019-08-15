@@ -57,7 +57,7 @@
 
 [IDE - EOS Studio](https://www.eosstudio.io/)
 
-[EOS BP howto to achieve max cpu performance for block porducing](https://github.com/atticlab/eos-bp-performance)
+[EOS BP how to achieve max cpu performance for block porducing](https://github.com/atticlab/eos-bp-performance)
 
 [EOSphere Infrastructure Upgrades](https://steemit.com/eosio/@eosphere/eosphere-infrastructure-upgrades)
 
