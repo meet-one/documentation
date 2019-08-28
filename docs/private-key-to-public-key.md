@@ -67,7 +67,7 @@ pk * G
 
 **注：这里的 (x : y : z) 是射影坐标，一般采用笛卡尔坐标系表示，为 (x/z, y/z)。**
 
-下一篇《[ECC Node.js](ecc-nodejs.md)》介绍如果用 Node.js 完成这一步。
+下一篇《[ECC Node.js](ecc-nodejs.md)》介绍如何用 Node.js 完成这一步。
 
 ### 3. 编码公钥
 
