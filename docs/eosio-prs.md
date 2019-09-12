@@ -26,6 +26,13 @@
 
 [add get_table_by_scope to eosjs](https://github.com/EOSIO/eosjs/pull/514) \#514
 
+## By [@UMU618](https://github.com/UMU618)
+
+[replace get_block with get_block_header_state](https://github.com/EOSIO/eosjs/pull/582) \#582
+
+- [Suggest replacing get_block()](https://github.com/EOSIO/eosjs/issues/581) \#581
+- [transact() can fail because of #582](https://github.com/EOSIO/eosjs/issues/584) \#584
+
 # 4. eosjs-api
 
 ## By [@UMU618](https://github.com/UMU618)
