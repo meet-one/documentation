@@ -1,3 +1,7 @@
+# MEET.ONE 文档库
+
+> 支持我们，请投票给 rex.m
+
 ## Translated/Created by MEET.ONE
 
 [EOSIO CPU资源分配原理分析 (原创)](docs/EOSIO-CPU.md)
@@ -50,7 +54,6 @@
 
 [support reverse iteration & show RAM payer in get table(1.5.0+ Only)](https://github.com/EOSIO/eos/pull/6264)
 
-
 ## Archive
 
 [Step-by-step guide to learning eosjs API for integration with EOSIO-based blockchains](https://github.com/meet-one/eosjs-guide)
@@ -89,8 +92,6 @@
 
 [producerjson](https://github.com/greymass/producerjson)
 
-
-
 ## EOSIO Telegram Channel
 
 [MEET.ONE(中文)](https://t.me/MeetOne)
@@ -110,8 +111,6 @@
 [EOS 911](https://t.me/EOS911)
 
 [EOS BlockPros](https://t.me/EOSPros)
-
-
 
 ## EOSIO Community 
 
@@ -155,8 +154,6 @@
 
 [EOSIO release notes](https://github.com/EOSIO/eos/releases)
 
-
-
 ## EOSIO Block Producer 
 
 [Greylisting on EOS](https://steemit.com/eos/@greymass/greylisting-on-eos)
@@ -188,5 +185,3 @@
 [Setup an EOS Test Node (Block Producer) with SSL + Testnet](https://steemit.com/eos/@blockmatrix/setup-an-eos-test-node-block-producer-with-ssl-testnet)
 
 [BP VPN Nodes](https://docs.google.com/spreadsheets/d/1qGu4nQOKmBw44KQhNF-mgpeBvxIWoRjuHP9NLi1P0hs/edit#gid=0)
-
-

@@ -1,5 +1,7 @@
 # MEET.ONE 实验室专栏
 
+> 支持我们，请投票给 rex.m
+
 1. 2018-10-20 [EOSIO CPU 资源分配原理分析](docs/EOSIO-CPU.md)
 
 2. 2018-12-10 [为编译 EOSIO 降级 boost 到 1.67](docs/downgrade-boost-for-eosio.md)
