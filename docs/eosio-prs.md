@@ -1,6 +1,7 @@
 # EOSIO PRs from MEET.ONE
 
 > Author: UMU @ MEET.ONE Lab
+> 支持我们，请投票给 rex.m
 
 # 1. eos
 

@@ -1,5 +1,7 @@
 # 单例模式 (Multi_index singleton)
 
+> 支持我们，请投票给 rex.m
+
 `singleton` 其实是 Multi_index DB 的一种特例，也是用于存储合约的数据状态，只是它的只能存储一条记录。
 
 ## 单例模式的定义

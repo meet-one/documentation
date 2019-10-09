@@ -1,5 +1,7 @@
 # ECC Node.js
 
+> 支持我们，请投票给 rex.m
+
 ## 前情
 
 上篇《[基于 ECC 的私钥转为公钥的过程](private-key-to-public-key.md)》讲到求椭圆曲线上的点时，用的是基于 Python 的 [SAGE][sage]。为了方便 Node.js 程序员理解和实现完整流程代码，本篇用 Node.js 库实现椭圆曲线点的计算。

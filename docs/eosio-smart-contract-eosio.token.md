@@ -1,5 +1,7 @@
 # eosio.token合约分析
 
+> 支持我们，请投票给 rex.m
+
 ## 合约说明
 
 eosio.token合约可用于创建多种不同的代币，任何部署该合约的账户都可以创建和发放代币。但是也并非随意可以部署，毕竟在主网上部署合约需要消耗RAM、CPU和NET资源。以1.5.x版本的[eosio.token](https://github.com/EOSIO/eosio.contracts/tree/release/1.5.x)合约，1.4.1版本的[eosio.cdt](https://github.com/EOSIO/eosio.cdt/tree/release/1.4.x)编译器为例：通过编译器生成的`eosio.token.wasm`文件大小是`22604 byte`，`eosio.token.abi`文件大小是`4476 byte`，部署到主网需要消耗的RAM是：

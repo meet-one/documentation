@@ -1,5 +1,7 @@
 # 如何使用 capi_checksum256 作为 table的key
 
+> 支持我们，请投票给 rex.m
+
 ## capi_checksum256 作为 table 的 secondary_key
 
 由于primary_key类型规定是uint64_t，而sha256是256位，强制类型转换会导致信息丢失，严格意义上是不能作为primary_key。

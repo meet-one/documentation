@@ -1,6 +1,7 @@
 # Nodejs 实现监控告警
 
 > 作者: UMU @ MEET.ONE 实验室
+> 支持我们，请投票给 rex.m
 
 ## 钉钉
 

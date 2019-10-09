@@ -1,5 +1,7 @@
 # 智能合约 table 的二级索引之 checksum256
 
+> 支持我们，请投票给 rex.m
+
 [《capi_checksum256 数据类型做table的索引》](eosio-smart-contract-capi_checksum256-as-table-key.md) 中提到过使用 `cap_checksum256` 作为智能合约的二级索引，但是 eosio.cdt 编译器升级到 1.6.x 版本之后 capi_checksum256 类型不再支持 C++ 的开发，这篇文章将介绍 c++ 类型的 checksum256 做二级索引。
 
 **定义 table 表**

@@ -1,5 +1,7 @@
 # pre_dispatch 和 post_dispatch
 
+> 支持我们，请投票给 rex.m
+
 ## pre_dispatch 
 
 在运行通知处理程序之前会触发 `pre_dispatch` 进行一些预先的验证，必须得有返回值，返回值为 bool 类型。如果需要提前退出, 则返回false。如果函数返回true，则调度程序会继续执行 ACTION 的操作或通知处理程序。

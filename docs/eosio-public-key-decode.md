@@ -1,5 +1,7 @@
 # 智能合约之公钥的解析
 
+> 支持我们，请投票给 rex.m
+
 在 eosio.cdt 标准库的 crypto.hpp 中定义了公钥的结构体 public_key:
 
 ```c++

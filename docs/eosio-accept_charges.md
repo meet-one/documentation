@@ -1,6 +1,7 @@
 # 智能合约替用户承担事务的开销
 
 > Author: UMU @ MEET.ONE Lab
+> 支持我们，请投票给 rex.m
 
 # 需求
 

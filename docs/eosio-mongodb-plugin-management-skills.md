@@ -1,6 +1,7 @@
 # EOSIO MongoDB 插件系列：管理技巧
 
 > 作者: UMU @ MEET.ONE 实验室
+> 支持我们，请投票给 rex.m
 
 总结同步主网数据到 MongoDB 时的常用操作，大部分以 transaction_traces 表为例。
 

@@ -1,5 +1,7 @@
 # DAPP Tutorial
 
+> 支持我们，请投票给 rex.m
+
 [Introduction](https://developers.eos.io/eosio-home/docs/introduction)
 
 [Hello World](https://developers.eos.io/eosio-home/docs/your-first-contract)

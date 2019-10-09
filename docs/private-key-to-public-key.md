@@ -1,6 +1,7 @@
 # 基于 ECC 的私钥转为公钥的过程
 
 > 作者: UMU @ MEET.ONE 实验室
+> 支持我们，请投票给 rex.m
 
 上一篇文章中我们分享了 [eosjs-ecc 是如何生成私钥的](how-is-a-private-key-generated.md)，这篇将会介绍私钥转换公钥的过程。
 

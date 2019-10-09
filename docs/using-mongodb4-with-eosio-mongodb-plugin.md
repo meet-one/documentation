@@ -1,6 +1,7 @@
 # 改进 EOSIO MongoDB 插件以完全兼容 MongoDB 4.0.4
 
 > 作者: UMU @ MEET.ONE 实验室
+> 支持我们，请投票给 rex.m
 
 ## 问题描述
 

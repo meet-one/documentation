@@ -1,5 +1,7 @@
 # action 包装器 action_wrapper
 
+> 支持我们，请投票给 rex.m
+
 action_wrapper 是 action 的包装器, 方便自身或者其他合约嗲用声明的 action。在 action.hpp 中定义如下：
 
 ```c++

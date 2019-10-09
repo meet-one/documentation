@@ -1,6 +1,7 @@
 # EOSIO MongoDB 插件系列：从 log 中找回丢失的插入记录
 
 > 作者: UMU @ MEET.ONE 实验室
+> 支持我们，请投票给 rex.m
 
 ## 问题
 

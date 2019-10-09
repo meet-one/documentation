@@ -1,6 +1,7 @@
 # 强制 body-parser 解析无 Content-Type 请求
 
 > 作者: UMU @ MEET.ONE 实验室
+> 支持我们，请投票给 rex.m
 
 ## 需求
 

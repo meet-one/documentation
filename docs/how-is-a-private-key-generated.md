@@ -1,5 +1,7 @@
 ## eosjs-ecc 是如何生成私钥的
 
+> 支持我们，请投票给 rex.m
+
 ### 生成 256 位的私钥
 
 1. 通过 [randombytes](https://github.com/crypto-browserify/randombytes) 生成一组 32 字节的随机数。
