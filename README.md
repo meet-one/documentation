@@ -4,6 +4,8 @@
 
 ## Translated/Created by MEET.ONE
 
+* [MEET.ONE 实验室专栏](meetone-lab-docs.md)
+
 [EOSIO CPU资源分配原理分析 (原创)](docs/EOSIO-CPU.md)
 
 [EOSIO技术白皮书 (第二版)](docs/EOSIO-whitepaper-2.0-Chinese.md)
@@ -15,8 +17,6 @@
 [EOS ICO 智能合约解读 (原创)](docs/EOSCrowdsale.md)
 
 [DAPP Tutorial/指南(原创)](docs/dapp-tutorial.md)
-
-[MEET.ONE 实验室专栏 ( 33篇 )](meetone-lab-docs.md)
 
 ## EOS Mainnet Snapshots
 
@@ -112,7 +112,7 @@
 
 [EOS BlockPros](https://t.me/EOSPros)
 
-## EOSIO Community 
+## EOSIO Community
 
 [Universal Resource Inheritance](https://medium.com/@bytemaster/universal-resource-inheritance-505e7ca4d048)
 
@@ -154,7 +154,7 @@
 
 [EOSIO release notes](https://github.com/EOSIO/eos/releases)
 
-## EOSIO Block Producer 
+## EOSIO Block Producer
 
 [Greylisting on EOS](https://steemit.com/eos/@greymass/greylisting-on-eos)
 
