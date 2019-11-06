@@ -53,9 +53,9 @@ nohup nodeos --config-dir ~/nodeos/config-dir --data-dir ~/nodeos/data-dir --gen
  ```
 - 进入编译好的contract目录  
 ```
-# XXX是token名字,数字是发行数量
+# XXX是token名字,数字是发行数量,create是最大发行量,issue目前发行量。因为有增发的存在，create要大于issue
 cleos set contract eosio.token ./ eosio.token.wasm eosio.token.abi -p eosio.token@active
-cleos push action eosio.token create '[ "eosio", "1000000000.0000 XXX"]' -p eosio.token@active
+cleos push action eosio.token create '[ "eosio", "10000000000.0000 XXX"]' -p eosio.token@active
 cleos push action eosio.token issue '[ "eosio", "1000000000.0000 XXX", "xxx" ]' -p eosio@active
 
 cleos set contract eosio ./ eosio.system.wasm eosio.system.abi -p eosio@active
