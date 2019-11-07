@@ -73,7 +73,7 @@ cleos -u http://mainnet.meet.one get table eosio eosio rexpool
 }
 ```
 然后计算 `total_rex / total_lendables = 9969.7119 REX` 得到的值即是 1 EOS 大概可以购买的 REX 数量。
-假如您是在 UTC 时间( 非北京时间 ) `2019-10-08T00:00:00.000 ~ 2019-10-09T00:00:00.000` 之间的任意时间时刻、任意多次买入 REX，那么都是在 `2019-10-13T00.00.00.000` 之后才可以出售这部分及之前购买的 REX，也就是 4 天多的时间，因为购买的当天不算，需要等第二天 0 点开始，等待 4 天时间。也可以通过 `rexbal` 中的 `rex_maturities` 成熟桶查看具体成熟时间，如实例 3 所示。
+假如您是在 UTC 时间( 非北京时间 ) `2019-10-08T00:00:00.000 ~ 2019-10-09T00:00:00.000` 之间的任意时间、任意多次买入 REX (会被合并到一起)，那么都是在 `2019-10-13T00.00.00.000` 之后才可以出售这部分以及之前购买的 REX，也就是需要 4 天多的时间，所谓的等待 4 天是指从第二天 0 点开始。当然也可以通过 `rexbal` 中的 `rex_maturities` 成熟桶查看具体成熟时间，如实例 3 所示。
 
 ```
 查询 OWNRE 的 rexbal 数据:
@@ -108,7 +108,7 @@ cleos -u http://mainnet.meet.one get table eosio eosio rexbal -L OWNER -U OWNER
 
 ## 3. sellrex ( 出售 REX )
 
-经过 4 天多的等待，该到领取收益的时候了，激动。
+经过 4 天多的等待，便可以出售 REX 来领取收益了。
 ```
 cleos -u http://mainnet.meet.one push action eosio sellrex '["FROM", "AMOUNT"]' -p FROM@active
 ```
@@ -153,14 +153,15 @@ cleos -u http://mainnet.meet.one get table eosio eosio rexqueue --index 2 --key-
 cleos -u http://mainnet.meet.one push action eosio cnclrexorder '["OWNER"]' -p OWNER@active
 ```
 
-如果队列中前面存在大额卖单交易，这种情况下你可能得等很长一段时间才能轮到自己，但是你想早点出售，还是有些小技巧的。
+如果你想早点出售，可是队列中前面存在大额卖单交易，那么怎么处理？
 
+小技巧来了：
 可以根据 `rexpool` 表中的数据来计算当前允许出售的最大数量的 REX:
 
 ```
 （total_unlent - 0.2 * total_lent）* total_rex / total_lendable
 ```
-也可以运行本文的[源码](./get_max_available_sell_amount.js)。这样就可以插队提前出售一部分 REX。
+也可以运行本文的[源码](./get_max_available_sell_amount.js)查看目前主网详情。根据计算结果选择低于该值出售 REX，这样就可以插队提前出售一部分 REX，不需要等待。
 
 ## 4. withdraw ( 提现 )
 
