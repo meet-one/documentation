@@ -23,7 +23,7 @@ cleos -u http://mainnet.meet.one push action eosio deposit '["OWNER", "AMOUNT"]'
 
 cleos -u http://mainnet.meet.one get table eosio eosio rexfund -L OWNER -U OWNER
 ```
-```json
+```
 实例 1:
 
 {
@@ -54,7 +54,7 @@ cleos -u http://mainnet.meet.one push action eosio buyrex '["FROM", "AMOUNT"]' -
 ```
 cleos -u http://mainnet.meet.one get table eosio eosio rexpool
 ```
-```json
+```
 实例 2:
 
 {
@@ -80,7 +80,7 @@ cleos -u http://mainnet.meet.one get table eosio eosio rexpool
 
 cleos -u http://mainnet.meet.one get table eosio eosio rexbal -L OWNER -U OWNER
 ```
-```json
+```
 实例 3:
 {
   "rows": [{
@@ -123,7 +123,7 @@ cleos -u http://mainnet.meet.one push action eosio sellrex '["FROM", "AMOUNT"]' 
 
 cleos -u http://mainnet.meet.one get table eosio eosio rexqueue --index 2 --key-type i64   
 ```
-```json
+```
 {
   "rows": [{
       "version": 0,
