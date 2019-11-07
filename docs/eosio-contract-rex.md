@@ -1,6 +1,8 @@
 # REX 之赚取收益篇( 一 )
 
-rex 赚取收益需 4 步: 
+> 支持我们，请投票给 rex.m
+
+REX 赚取收益需 4 步: 
 1. `deposit`
 2. `buyrex`
 3. `sellrex`
