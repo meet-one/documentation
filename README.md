@@ -6,6 +6,8 @@
 
 * [MEET.ONE 实验室专栏](meetone-lab-docs.md)
 
+* [EOSIO PRs from MEET.ONE](docs/eosio-prs.md)
+
 [EOSIO CPU资源分配原理分析 (原创)](docs/EOSIO-CPU.md)
 
 [EOSIO技术白皮书 (第二版)](docs/EOSIO-whitepaper-2.0-Chinese.md)
