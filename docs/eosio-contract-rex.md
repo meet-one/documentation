@@ -4,7 +4,7 @@
 
 REX 赚取收益需 4 步: 
 1. `deposit`
-2. `buyrex`
+2. `buyrex` or `unstaketorex`
 3. `sellrex`
 4. `withdraw`
 
@@ -37,9 +37,11 @@ cleos -u http://mainnet.meet.one get table eosio eosio rexfund -L OWNER -U OWNER
 }
 ```
 
-## 2. buyrex ( 购买 REX )
+## 2. buyrex or unstaketorex( 购买 REX )
 
 通过 `deposit` 存入了 EOS，同时还必须投票给至少 21 个节点或者把投票权交给代理，才可以购买 REX 代币（也就是所谓的出租 EOS）赚取收益，。
+
+### 1）buyrex (用 rexfund 资金中购买 REX)
 
 ```
 cleos -u http://mainnet.meet.one push action eosio buyrex '["FROM", "AMOUNT"]' -p FROM@active
@@ -47,6 +49,17 @@ cleos -u http://mainnet.meet.one push action eosio buyrex '["FROM", "AMOUNT"]' -
 
 - **FROM:**   购买 REX 的账户
 - **AMOUNT:** 购买数量（EOS）
+
+### 2) unstaketorex (用抵押的 CPU 和 NET 购买 REX)
+
+通过 `unstaketorex` 购买 REX 会解质押 CPU 和 NET 资源，在购买前计算好资源，以免 [CPU 爆了](https://cpubaole.com)。
+```
+cleos -u http://mainnet.meet.one push action eosio unstaketorex '["OWNER", "RECEIVER","FROM_NET", "FROM_CPU"]' -p OWNER@active
+```
+- **OWNER:**      购买 REX 的账户 
+- **RECEIVER:**   抵押的接收账户
+- **FROM_NET:**   从抵押给 RECEIVER 的 net 中解质押 FROM_NET 数量的 EOS 购买 REX
+- **FROM_CPU:**   从抵押给 RECEIVER 的 CPU 中解质押 FROM_CPU 数量的 EOS 购买 REX
 
 那么 1 个 EOS 可以购买多少的 REX 呢？
 首先得获取实例 2 中的 `rexpool` 表数据：
