@@ -1,4 +1,4 @@
-# 智能合约替用户承担事务的开销
+# **智能合约替用户承担事务的开销**
 
 > Author: UMU @ MEET.ONE Lab
 > 支持我们，请投票给 rex.m
@@ -18,6 +18,23 @@
 eos 1.8 的 ONLY_BILL_FIRST_AUTHORIZER 特性，通过只向事务的首个授权方收费的方式，部分地解决这个问题。这一特性允许应用提供者对用户的每一笔事务进行联合签名，通过这一方式从公共池中支付事务的开销。
 
 缺陷：联合签名操作门槛高，安全性堪忧。
+
+### 本地实验
+
+- 开启 ONLY_BILL_FIRST_AUTHORIZER
+
+```bash
+curl -X POST http://127.0.0.1:8888/v1/producer/get_supported_protocol_features -d '{}' | jq
+
+# 复制 ONLY_BILL_FIRST_AUTHORIZER 的 feature_digest
+
+cleos push action eosio activate '[8ba52fe7a3956c5cd3a656a3174b931d3bb2abb45578befc59f283ecd816a405]'
+
+# 查看是否激活
+curl -X POST http://127.0.0.1:8888/v1/chain/get_activated_protocol_features -d '{}' | jq
+```
+
+- 验证：cleos push action 时，带多个 -p 参数（指定多个账户），应该只有第一个账户被消耗 CPU。
 
 ## 2. 合约调用 accept_charges
 
