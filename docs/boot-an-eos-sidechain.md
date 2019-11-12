@@ -53,7 +53,7 @@ nohup nodeos --config-dir ~/nodeos/config-dir --data-dir ~/nodeos/data-dir --gen
 
 ## 2. genesis node 加载系统合约
 
-- 创建系统账号 eosio.token,eosio.msig,eosio.ram,eosio.ramfee,eosio.stake,eosio.bpay,eosio.vpay,eosio.wrap,eosio.bios,eosio.abp,eosio.saving,eosio.rex
+- 创建系统账号 eosio.token,eosio.msig,eosio.ram,eosio.ramfee,eosio.stake,eosio.bpay,eosio.vpay,eosio.wrap,eosio.bios,eosio.abp,eosio.saving,eosio.rex,eosio.names
 
 如下命令：
 
