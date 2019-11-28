@@ -162,6 +162,8 @@
 
 [EOS Seed List](https://eosnodes.privex.io/)
 
+[EOS Peer List](https://validate.eosnation.io/eos/reports/config.txt)
+
 [EOS Network Monitor](http://eosnetworkmonitor.io/)
 
 [EOS BP Security Statement](https://steemit.com/eos/@eostribe/eos-bp-security-statement)
