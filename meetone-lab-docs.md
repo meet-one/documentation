@@ -77,3 +77,5 @@
 37. 2019-11-06 [启动一条基于 EOS 的侧链](docs/boot-an-eos-sidechain.md)
 
 38. 2019-11-07 [REX 之赚取收益篇( 一 )](docs/eosio-contract-rex.md)
+
+39. 2019-12-26 [ECDSA Node.js](docs/ecdsa-nodejs.md)
