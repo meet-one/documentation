@@ -171,8 +171,9 @@ cleos -u http://mainnet.meet.one push action eosio cnclrexorder '["OWNER"]' -p O
 小技巧来了：
 可以根据 `rexpool` 表中的数据来计算当前允许出售的最大数量的 REX:
 
+~~（total_unlent - 0.2 * total_lent）* total_rex / total_lendable（v1.8.2之前版本计算方式）~~
 ```
-（total_unlent - 0.2 * total_lent）* total_rex / total_lendable
+（total_unlent - 0.1 * total_lent）* total_rex / total_lendable (v1.8.3 计算方式)
 ```
 也可以运行本文的[源码](./get_max_available_sell_amount.js)查看目前主网详情。根据计算结果选择低于该值出售 REX，这样就可以插队提前出售一部分 REX，不需要等待。
 

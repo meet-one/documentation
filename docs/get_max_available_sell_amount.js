@@ -24,6 +24,6 @@ rpc.get_table_rows({
   var totalLent = rexpool.rows[0].total_lent.split(' ')[0]
   var totalUnlent = rexpool.rows[0].total_unlent.split(' ')[0]
   var maxGetEOS = totalUnlent - 2 * totalLent / 10
-  var maxSellRex = (totalUnlent - 0.2 * totalLent) * totalRex / totalLendable
+  var maxSellRex = (totalUnlent - 0.1 * totalLent) * totalRex / totalLendable
   console.log('Max available sell amount of rex: ' + maxSellRex.toFixed(4) + ' REX.' + ' Equal to ' + maxGetEOS.toFixed(4) + ' EOS.')
 })
