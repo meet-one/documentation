@@ -79,3 +79,5 @@
 38. 2019-11-07 [REX 之赚取收益篇( 一 )](docs/eosio-contract-rex.md)
 
 39. 2019-12-26 [ECDSA Node.js](docs/ecdsa-nodejs.md)
+
+40. 2020-01-07 [REX v1.8.3 新特性](docs/eosio-contract-rex2.md)
