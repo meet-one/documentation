@@ -27,7 +27,7 @@
 }
 ```
 字段说明：
-* `last_dist_time`: 最后一次从购买 ram 的手续费、CUP/NET 租用的费用以及短账户名交易的收入被添加到 REX 中的时间
+* `last_dist_time`: 最后一次购买 ram 的手续费、CUP/NET 租用的费用或者短账户名交易的收入被添加到 REX 中的时间
 * `pending_bucket_time`: 待处理的 12 小时返回桶的时间戳
 * `oldest_bucket_time`: 最早的 12 小时间结算池的时间
 * `pending_bucket_proceeds`: 当前 12 小时间结算池的收益
