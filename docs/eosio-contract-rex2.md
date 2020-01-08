@@ -40,7 +40,7 @@
 
 ### retbuckets 表
 
-记录了 12 个小时间隔内累计的收益率, 将 `return_bukets` 中所有的 `value` 相加其实就是  `current_rate_of_increase` 的值。
+记录了 12 个小时间隔内累计的收益的释放率, 即未来 30 天每 10 分钟该 12 小时间结算池中的全部收益被逐步释放到 REX 的数量, 将 `return_bukets` 中所有的 `value` 相加其实就是  `current_rate_of_increase` 的值。
 ```json
 {
   "rows": [{
