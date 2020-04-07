@@ -15,6 +15,10 @@
 
 [Optimize mongodb plugin](https://github.com/EOSIO/eos/pull/6990) \#6990
 
+[Replace hard coding system_account_name](https://github.com/EOSIO/eos/pull/8254) \#8254
+
+[Remove Unused Variable](https://github.com/EOSIO/eos/pull/8269) \#8269
+
 # 2. eosio.cdt
 
 ## By [@UMU618](https://github.com/UMU618)
@@ -33,6 +37,8 @@
 
 - [Suggest replacing get_block()](https://github.com/EOSIO/eosjs/issues/581) \#581
 - [transact() can fail because of #582](https://github.com/EOSIO/eosjs/issues/584) \#584
+
+[Remove unnecessary call to get_block_header_state](https://github.com/EOSIO/eosjs/pull/703) \#703
 
 # 4. eosjs-api
 
